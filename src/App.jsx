@@ -1,4 +1,3 @@
-import "./App.css";
 import Hero from "./components/Hero";
 import Blogs from "./components/Blogs";
 import Features from "./components/Features";
