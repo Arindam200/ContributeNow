@@ -3,17 +3,20 @@ import Blogs from "./components/Blogs";
 import Features from "./components/Features";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
-import Card from "./components/Card";
+import { Routes, Route } from "react-router-dom";
+import IssuePage from "./pages/IssuePage";
 
 function App() {
   return (
     <>
-      <Hero />
+      {/* <Hero />
       <Features />
       <Blogs />
       <FAQ />
-      <Footer />
-      <Card />
+      <Footer /> */}
+      <Routes>
+        <Route exact path="/list" element={<IssuePage />} />
+      </Routes>
     </>
   );
 }

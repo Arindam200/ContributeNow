@@ -26,25 +26,25 @@ const apiState = (props) => {
   data.map((element) => {
     repoLink.push(element.repository_url);
   });
-  useEffect(() => {
-    const updateRepo = async () => {
-      repoLink.map(async (link) => {
-        let dataRepo = await fetch(link);
-        let newData = await dataRepo.json();
-        console.log(newData);
-        // setRepo({
-        //   id: newData.id,
-        //   name: newData.name,
-        //   language: newData.language,
-        //   stars: newData.stargazers_count,
-        //   html_url: newData.html_url,
-        //   description: newData.description,
-        // });
-      });
-    };
-    updateRepo();
-  });
-  console.log(repo);
+  // useEffect(() => {
+  //   const updateRepo = async () => {
+  //     repoLink.map(async (link) => {
+  //       let dataRepo = await fetch(link);
+  //       let newData = await dataRepo.json();
+  //       console.log(newData);
+  //       // setRepo({
+  //       //   id: newData.id,
+  //       //   name: newData.name,
+  //       //   language: newData.language,
+  //       //   stars: newData.stargazers_count,
+  //       //   html_url: newData.html_url,
+  //       //   description: newData.description,
+  //       // });
+  //     });
+  //   };
+  //   updateRepo();
+  // });
+  // console.log(repo);
   const passData = {
     data,
     repo,
