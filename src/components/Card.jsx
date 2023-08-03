@@ -2,7 +2,7 @@ const Card = (props) => {
   const labelNames = [];
   props.labels.map((label) => labelNames.push(label.name));
   return (
-    <div className=" bg-gray-800 text-gray-50 rounded max-w-sm h-36 ">
+    <div className="">
       <a
         href={props.link}
         target="_blank"
