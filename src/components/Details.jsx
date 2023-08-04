@@ -23,7 +23,6 @@ const Details = (props) => {
     };
     addRepoDetails();
   }, []);
-  console.log(repoDetails);
   return (
     <div>
       <a
