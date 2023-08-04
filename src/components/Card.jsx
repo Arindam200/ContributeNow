@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Details from "./Details";
 const Card = (props) => {
   const labelNames = [];
   const currentTime = Date.now();
@@ -79,6 +80,8 @@ const Card = (props) => {
           ))}
         </div>
 
+        <Details repoLink={props.repoLink} />
+
         <dl className="mt-6 flex gap-4 sm:gap-6">
           <div className="flex flex-col-reverse">
             <dt className="text-sm font-medium text-gray-600">Published</dt>
@@ -90,7 +93,6 @@ const Card = (props) => {
             <dd className="text-xs text-gray-500">3 minute</dd>
           </div>
         </dl>
- 
       </a>
     </>
   );
