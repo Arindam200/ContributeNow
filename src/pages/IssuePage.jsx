@@ -18,8 +18,6 @@ const IssuePage = () => {
   };
 
   return (
-
- 
     <>
       <Navbar />
       <div className="mx-auto">
