@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Details from "./Details";
 const Card = (props) => {
-  const labelNames = [];
+  const labelDetails = [];
   const currentTime = Date.now();
   const createdDate = new Date(props.active);
 
@@ -25,21 +25,15 @@ const Card = (props) => {
       Seconds: Math.floor((timeInMiliSeconds / 1000) % 60),
     });
   };
+
   useEffect(() => {
     issueActivationTime();
   }, []);
 
-  console.log(
-    time.Years,
-    time.Months,
-    time.Days,
-    time.Hours,
-    time.Minutes,
-    time.Seconds
+  props.labels.map((label) =>
+    labelDetails.push({ text: label.name, color: label.color })
   );
-
-  props.labels.map((label) => labelNames.push(label.name));
-
+  console.log(labelDetails);
   return (
     <>
       <a
@@ -80,6 +74,12 @@ const Card = (props) => {
             {props.body ? props.body.slice(0, 100) : props.body}
           </p>
         </div>
+
+        <div className="flex justify-around">
+          {labelDetails.map((label) => (
+            <h3 style={{ color: label.color }}>{label.text}</h3>
+          ))}
+        </div
 
         <Details repoLink={props.repoLink} />
 
