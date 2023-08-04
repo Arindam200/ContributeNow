@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Details from "./Details";
+import ReactMarkdown from "react-markdown";
 const Card = (props) => {
   const labelDetails = [];
   const currentTime = Date.now();
@@ -105,9 +106,9 @@ const Card = (props) => {
         </div>
 
         <div className="mt-4">
-          <p className="max-w-[40ch] text-sm text-gray-500">
+          <ReactMarkdown className="max-w-[40ch] text-sm text-gray-500">
             {props.body ? props.body.slice(0, 100) : props.body}
-          </p>
+          </ReactMarkdown>
         </div>
 
         <Details repoLink={props.repoLink} />
