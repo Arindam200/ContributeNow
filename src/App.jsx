@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import IssuePage from "./pages/IssuePage";
 import LandingPage from "./pages/LandingPage";
-
 function App() {
   return (
     <>
