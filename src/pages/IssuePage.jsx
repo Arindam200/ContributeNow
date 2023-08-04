@@ -35,8 +35,15 @@ const IssuePage = () => {
         ))}
       </div>
       <div className="flex justify-between">
-        <button onClick={handlePreviousPage}>previous</button>
-        <button onClick={handleNextPage}>next</button>
+        <button onClick={handlePreviousPage} disabled={page <= 1}>
+          previous
+        </button>
+        <button
+          onClick={handleNextPage}
+          disabled={page + 1 > Math.ceil(1000 / 15)}
+        >
+          next
+        </button>
       </div>
     </div>
   );

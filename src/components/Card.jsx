@@ -34,7 +34,7 @@ const Card = (props) => {
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
   );
-  console.log(labelDetails);
+
   return (
     <>
       <a
@@ -63,23 +63,26 @@ const Card = (props) => {
             />
           </div>
         </div>
+
         <div className="">
           {labelDetails.map((label) => (
             <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1">
               <h3
                 className="text-xs font-semibold"
-                style={{ color: label.color }}
+                style={{ color: "#"+label.color }}
               >
                 {label.text}
               </h3>
             </span>
           ))}
         </div>
+
         <div className="mt-4">
           <ReactMarkdown className="max-w-[40ch] text-sm text-gray-500">
             {props.body ? props.body.slice(0, 100) : props.body}
           </ReactMarkdown>
         </div>
+
 
         <Details repoLink={props.repoLink} />
       </a>
