@@ -19,6 +19,7 @@ const IssuePage = () => {
               labels={element.labels}
               active={element.created_at}
               img={element.user.avatar_url}
+              name={element.user.login}
             />
             <Details repoLink={element.repository_url} />
           </div>

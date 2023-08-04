@@ -7,7 +7,7 @@ const apiState = (props) => {
   useEffect(() => {
     const updateIssue = async () => {
       const url =
-        "https://api.github.com/search/issues?q=is:issue+is:open+is:public+label:%22good%20first%20issue%22";
+        "https://api.github.com/search/issues?q=is:issue+is:open+is:public+label:%22good%20first%20issue%22&per_page=15";
       const issueData = await fetch(url);
       const parsedData = await issueData.json();
       setData(parsedData.items);
