@@ -63,34 +63,40 @@ const Card = (props) => {
           </div>
         </div>
 
+        <div className="">
+          {labelDetails.map((label) => (
+            <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1">
+              <h3
+                className="text-xs font-semibold"
+                style={{ color: "#"+label.color }}
+              >
+                {label.text}
+              </h3>
+            </span>
+          ))}
+        </div>
+
         <div className="mt-4">
           <p className="max-w-[40ch] text-sm text-gray-500">
             {props.body ? props.body.slice(0, 100) : props.body}
           </p>
         </div>
 
-        <div className="flex justify-around">
-          {labelDetails.map((label) => (
-            <h3 style={{ color: "#" + label.color }}>{label.text}</h3>
-          ))}
-        </div>
 
         <Details repoLink={props.repoLink} />
-
-        <dl className="mt-6 flex gap-4 sm:gap-6">
-          <div className="flex flex-col-reverse">
-            <dt className="text-sm font-medium text-gray-600">Published</dt>
-            <dd className="text-xs text-gray-500">31st June, 2021</dd>
-          </div>
-
-          <div className="flex flex-col-reverse">
-            <dt className="text-sm font-medium text-gray-600">Reading time</dt>
-            <dd className="text-xs text-gray-500">3 minute</dd>
-          </div>
-        </dl>
       </a>
     </>
   );
 };
 
 export default Card;
+
+// border-red-500 text-red-600 bg-red-200
+// how to add dynamic classes in tailwind
+// {labelNames.map((names) => (
+//   <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1">
+//     <h3 className="text-xs font-semibold" disabled>
+//       {names}
+//     </h3>
+//   </span>
+// ))}
