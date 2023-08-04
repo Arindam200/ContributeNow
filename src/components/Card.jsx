@@ -56,7 +56,7 @@ const Card = (props) => {
             </h3>
 
             <p className="mt-1 text-xs font-medium text-gray-600">
-              By John Doe
+              By {props.name}
             </p>
           </div>
 
