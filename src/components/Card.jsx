@@ -33,7 +33,7 @@ const Card = (props) => {
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
   );
-  console.log(labelDetails);
+
   return (
     <>
       <a
@@ -62,13 +62,7 @@ const Card = (props) => {
             />
           </div>
         </div>
-        {labelNames.map((names) => (
-          <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border border-red-500 text-red-600 bg-red-200 last:mr-0 mr-1">
-            <h3 className="text-xs font-semibold" disabled>
-              {names}
-            </h3>
-          </span>
-        ))}
+
         <div className="mt-4">
           <p className="max-w-[40ch] text-sm text-gray-500">
             {props.body ? props.body.slice(0, 100) : props.body}
@@ -77,9 +71,9 @@ const Card = (props) => {
 
         <div className="flex justify-around">
           {labelDetails.map((label) => (
-            <h3 style={{ color: label.color }}>{label.text}</h3>
+            <h3 style={{ color: "#" + label.color }}>{label.text}</h3>
           ))}
-        </div
+        </div>
 
         <Details repoLink={props.repoLink} />
 
