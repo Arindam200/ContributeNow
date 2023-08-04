@@ -90,6 +90,7 @@ const Card = (props) => {
             <dd className="text-xs text-gray-500">3 minute</dd>
           </div>
         </dl>
+ 
       </a>
     </>
   );
