@@ -4,9 +4,19 @@ const Card = (props) => {
   const labelDetails = [];
   const currentTime = Date.now();
   const createdDate = new Date(props.active);
+  const updatedDate = new Date(props.update);
 
-  const timeInMiliSeconds = currentTime - createdDate;
-  const [time, setTime] = useState({
+  const timeInMiliSecondsForCreate = currentTime - createdDate;
+  const timeInMiliSecondsForUpdate = currentTime - updatedDate;
+  const [timeCreate, setTimeCreate] = useState({
+    Years: 0,
+    Months: 0,
+    Days: 0,
+    Hours: 0,
+    Minutes: 0,
+    Seconds: 0,
+  });
+  const [timeUpdate, setTimeUpdate] = useState({
     Years: 0,
     Months: 0,
     Days: 0,
@@ -16,13 +26,31 @@ const Card = (props) => {
   });
 
   const issueActivationTime = () => {
-    setTime({
-      Years: Math.floor(timeInMiliSeconds / (1000 * 60 * 60 * 24 * 365)),
-      Months: Math.floor(timeInMiliSeconds / (1000 * 60 * 60 * 24 * 30)),
-      Days: Math.floor(timeInMiliSeconds / (1000 * 60 * 60 * 24)),
-      Hours: Math.floor((timeInMiliSeconds / (1000 * 60 * 60)) % 24),
-      Minutes: Math.floor((timeInMiliSeconds / (1000 * 60)) % 60),
-      Seconds: Math.floor((timeInMiliSeconds / 1000) % 60),
+    setTimeCreate({
+      Years: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 365)
+      ),
+      Months: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 30)
+      ),
+      Days: Math.floor(timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24)),
+      Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
+      Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
+      Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
+    });
+  };
+  const issueUpdatationTime = () => {
+    setTimeUpdate({
+      Years: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 365)
+      ),
+      Months: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 30)
+      ),
+      Days: Math.floor(timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24)),
+      Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
+      Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
+      Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
     });
   };
 
@@ -68,7 +96,7 @@ const Card = (props) => {
             <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1">
               <h3
                 className="text-xs font-semibold"
-                style={{ color: "#"+label.color }}
+                style={{ color: "#" + label.color }}
               >
                 {label.text}
               </h3>
@@ -81,7 +109,6 @@ const Card = (props) => {
             {props.body ? props.body.slice(0, 100) : props.body}
           </p>
         </div>
-
 
         <Details repoLink={props.repoLink} />
       </a>

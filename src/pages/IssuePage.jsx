@@ -24,12 +24,15 @@ const IssuePage = () => {
               key={element.url}
               title={element.title}
               body={element.body}
-              link={element.html_url}
-              labels={element.labels}
-              active={element.created_at}
-              img={element.user.avatar_url}
               name={element.user.login}
+              img={element.user.avatar_url}
+              link={element.html_url}
               repoLink={element.repository_url}
+              labels={element.labels}
+              assignee={element.assignee}
+              assignees={element.assignees}
+              active={element.created_at}
+              update={element.updated_at}
             />
           </div>
         ))}
