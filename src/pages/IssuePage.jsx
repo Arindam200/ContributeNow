@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import ApiContext from "../Context/api/apicontext";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
@@ -43,15 +44,20 @@ const IssuePage = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-between">
-          <button onClick={handlePreviousPage} disabled={page <= 1}>
-            previous
+        <div className="flex justify-center mt-5 space-x-0 md:space-x-2 md:mb-8">
+          <button
+            className="inline-flex items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
+            onClick={handlePreviousPage}
+            disabled={page <= 1}
+          >
+            Previous
           </button>
           <button
+            className="inline-flex  items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
             onClick={handleNextPage}
             disabled={page + 1 > Math.ceil(1000 / 15)}
           >
-            next
+            Next
           </button>
         </div>
       </div>
