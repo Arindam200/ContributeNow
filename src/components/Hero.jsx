@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <>
@@ -16,9 +17,9 @@ export default function Hero() {
             customer feedback loop.
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
-            <a
+            <Link
+              to="/"
               className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
-              href="#"
             >
               Get Started
               <svg
@@ -33,10 +34,10 @@ export default function Hero() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
-            <a
+            </Link>
+            <Link
+              to="/list"
               className="inline-flex items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
-              href="#"
             >
               Book a Demo
               <svg
@@ -51,7 +52,7 @@ export default function Hero() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="w-full mx-auto mt-20 text-center md:w-10/12">
