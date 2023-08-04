@@ -1,17 +1,14 @@
-import Hero from "./components/Hero";
-import Blogs from "./components/Blogs";
-import Features from "./components/Features";
-import FAQ from "./components/FAQ";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import IssuePage from "./pages/IssuePage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <>
-      <Hero />
-      <Features />
-      <Blogs />
-      <FAQ />
-      <Footer />
+      <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+        <Route exact path="/list" element={<IssuePage />} />
+      </Routes>
     </>
   );
 }
