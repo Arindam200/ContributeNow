@@ -69,7 +69,7 @@ const Card = (props) => {
           </div>
         </div>
         {labelNames.map((names) => (
-          <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border border-red-500 text-red-600 bg-red-200 last:mr-0 mr-1">
+          <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1">
             <h3 className="text-xs font-semibold" disabled>
               {names}
             </h3>
@@ -100,3 +100,6 @@ const Card = (props) => {
 };
 
 export default Card;
+
+// border-red-500 text-red-600 bg-red-200
+// how to add dynamic classes in tailwind
