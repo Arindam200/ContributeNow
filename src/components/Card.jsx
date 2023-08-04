@@ -55,7 +55,7 @@ const Card = (props) => {
             <h3 disabled>{names}</h3>
           ))}
         </div>
-        <div>{}</div>
+        <div>{props.name}</div>
       </a>
     </div>
   );
