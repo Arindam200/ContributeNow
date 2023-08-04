@@ -28,14 +28,14 @@ const Card = (props) => {
     issueActivationTime();
   }, []);
 
-  // console.log(
-  //   time.Years,
-  //   time.Months,
-  //   time.Days,
-  //   time.Hours,
-  //   time.Minutes,
-  //   time.Seconds
-  // );
+  console.log(
+    time.Years,
+    time.Months,
+    time.Days,
+    time.Hours,
+    time.Minutes,
+    time.Seconds
+  );
 
   props.labels.map((label) => labelNames.push(label.name));
 

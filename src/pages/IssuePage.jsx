@@ -7,10 +7,10 @@ const IssuePage = () => {
   const cardData = useContext(ApiContext);
 
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto">
       <div className=" grid lg:grid-cols-3 gap-2 ">
         {cardData.map((element) => (
-          <div className="flex flex-col  bg-gray-800 text-gray-50 rounded w-fit min-w-[425px] h-fit ">
+          <div className="flex flex-col  bg-gray-800 text-gray-50 rounded h-fit ">
             <Card
               key={element.url}
               title={element.title}
