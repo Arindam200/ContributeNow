@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ApiContext from "../Context/api/apicontext";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
+import LoadingBar from "react-top-loading-bar";
 
 const IssuePage = () => {
   const cardData = useContext(ApiContext);
@@ -19,6 +20,11 @@ const IssuePage = () => {
   return (
     <>
       <Navbar />
+      <LoadingBar
+        color="#f11946"
+        progress={cardData.progress}
+        onLoaderFinished={() => cardData.setProgress(0)}
+      />
       <div className="mx-auto">
         <div className=" grid lg:grid-cols-3 gap-2 ">
           {cardData.data.map((element) => (
