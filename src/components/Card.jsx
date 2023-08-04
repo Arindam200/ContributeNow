@@ -5,9 +5,19 @@ const Card = (props) => {
   const labelDetails = [];
   const currentTime = Date.now();
   const createdDate = new Date(props.active);
+  const updatedDate = new Date(props.update);
 
-  const timeInMiliSeconds = currentTime - createdDate;
-  const [time, setTime] = useState({
+  const timeInMiliSecondsForCreate = currentTime - createdDate;
+  const timeInMiliSecondsForUpdate = currentTime - updatedDate;
+  const [timeCreate, setTimeCreate] = useState({
+    Years: 0,
+    Months: 0,
+    Days: 0,
+    Hours: 0,
+    Minutes: 0,
+    Seconds: 0,
+  });
+  const [timeUpdate, setTimeUpdate] = useState({
     Years: 0,
     Months: 0,
     Days: 0,
@@ -17,13 +27,31 @@ const Card = (props) => {
   });
 
   const issueActivationTime = () => {
-    setTime({
-      Years: Math.floor(timeInMiliSeconds / (1000 * 60 * 60 * 24 * 365)),
-      Months: Math.floor(timeInMiliSeconds / (1000 * 60 * 60 * 24 * 30)),
-      Days: Math.floor(timeInMiliSeconds / (1000 * 60 * 60 * 24)),
-      Hours: Math.floor((timeInMiliSeconds / (1000 * 60 * 60)) % 24),
-      Minutes: Math.floor((timeInMiliSeconds / (1000 * 60)) % 60),
-      Seconds: Math.floor((timeInMiliSeconds / 1000) % 60),
+    setTimeCreate({
+      Years: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 365)
+      ),
+      Months: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 30)
+      ),
+      Days: Math.floor(timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24)),
+      Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
+      Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
+      Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
+    });
+  };
+  const issueUpdatationTime = () => {
+    setTimeUpdate({
+      Years: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 365)
+      ),
+      Months: Math.floor(
+        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 30)
+      ),
+      Days: Math.floor(timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24)),
+      Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
+      Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
+      Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
     });
   };
 

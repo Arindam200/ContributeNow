@@ -29,6 +29,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.14.2
     version: 6.14.2(react-dom@18.2.0)(react@18.2.0)
+  react-top-loading-bar:
+    specifier: ^2.3.1
+    version: 2.3.1(react@18.2.0)
 
 devDependencies:
   '@types/react':
@@ -2579,6 +2582,15 @@ packages:
       react: '>=16.8'
     dependencies:
       '@remix-run/router': 1.7.2
+      react: 18.2.0
+    dev: false
+
+  /react-top-loading-bar@2.3.1(react@18.2.0):
+    resolution: {integrity: sha512-rQk2Nm+TOBrM1C4E3e6KwT65iXyRSgBHjCkr2FNja1S51WaPulRA5nKj/xazuQ3x89wDDdGsrqkqy0RBIfd0xg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+    dependencies:
       react: 18.2.0
     dev: false
 
