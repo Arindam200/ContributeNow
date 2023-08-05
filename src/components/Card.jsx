@@ -43,20 +43,21 @@ const Card = (props) => {
   const issueUpdatationTime = () => {
     setTimeUpdate({
       Years: Math.floor(
-        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 365)
+        timeInMiliSecondsForUpdate / (1000 * 60 * 60 * 24 * 365)
       ),
       Months: Math.floor(
-        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 30)
+        timeInMiliSecondsForUpdate / (1000 * 60 * 60 * 24 * 30)
       ),
-      Days: Math.floor(timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24)),
-      Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
-      Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
-      Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
+      Days: Math.floor(timeInMiliSecondsForUpdate / (1000 * 60 * 60 * 24)),
+      Hours: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60 * 60)) % 24),
+      Minutes: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60)) % 60),
+      Seconds: Math.floor((timeInMiliSecondsForUpdate / 1000) % 60),
     });
   };
 
   useEffect(() => {
     issueActivationTime();
+    issueUpdatationTime();
   }, []);
 
   props.labels.map((label) =>
