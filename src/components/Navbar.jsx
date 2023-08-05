@@ -1,7 +1,21 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import ApiContext from "../Context/api/apicontext";
+import { X } from "phosphor-react";
 
 export default function Navbar() {
+  const searchData = useContext(ApiContext);
+  const [filterData, setFilterData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
+
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    setWordEntered(searchWord);
+    const newFilter = searchData.data.filter((value) => {
+      return value.title.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    searchWord === "" ? setFilterData([]) : setFilterData(newFilter);
+  };
   return (
     <header class="flex mb-4 flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-gray-900 border-b border-gray-700 text-sm py-2.5 sm:py-4">
       <nav
@@ -11,7 +25,7 @@ export default function Navbar() {
         <div className="mr-5 md:mr-8">
           <Link
             className="flex-none text-xl font-semibold text-white"
-            to="#"
+            to="/"
             aria-label="Brand"
           >
             ContributeNow
@@ -59,8 +73,23 @@ export default function Navbar() {
                 id="icon"
                 name="icon"
                 className="py-2 px-4 pl-11 pr-20 block w-92 md:w-96 bg-transparent border-gray-700 shadow-sm rounded-full text-sm text-gray-300 focus:z-10 focus:border-gray-900 focus:ring-gray-600 placeholder:text-gray-500"
-                placeholder="Search"
+                placeholder="search"
+                onChange={handleFilter}
               />
+              {/* needs design here to showcase the data as a list while searching */}
+              {filterData.length !== 0 && (
+                <div className="dataResult">
+                  {filterData.map((value) => (
+                    <a
+                      href={value.html_url}
+                      target="_blank"
+                      className="dataItem"
+                    >
+                      <p>{value.title}</p>
+                    </a>
+                  ))}
+                </div>
+              )}
               <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none z-20 pr-4">
                 <span className="text-gray-500">Ctrl + /</span>
               </div>
