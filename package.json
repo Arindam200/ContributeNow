@@ -11,6 +11,7 @@
     "start": "vite"
   },
   "dependencies": {
+    "firebase": "^10.1.0",
     "kutty": "^0.6.0",
     "phosphor-react": "^1.4.1",
     "preline": "^1.9.0",
