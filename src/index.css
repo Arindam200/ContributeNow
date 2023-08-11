@@ -2,32 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.repo-footer {
-  font-size: 12px;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 25px;
-  background: white;
-  padding: 10px;
-}
-
-.repo-footer a {
-  text-decoration: none;
-  color: #6c757d;
-  font-weight: 500;
-}
-
-.repo-footer .repo-language-color {
-  width: 10px;
-  height: 10px;
-  margin-right: 4px;
-  border-radius: 50%;
-}
-
-.repo-footer a svg {
-  position: relative;
-  top: -2px;
-  fill: #6c757d;
-  margin-right: 5px;
-}
