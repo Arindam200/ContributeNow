@@ -69,17 +69,17 @@ const Card = (props) => {
       <a
         href={props.link}
         target="_blank"
-        className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+        className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-100 p-4 sm:p-6 lg:p-8"
       >
         <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 
         <div className="sm:flex sm:justify-between sm:gap-4">
           <div>
-            <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
-              {props.title}
+            <h3 className="text-lg lg:h-[60px] font-bold dark:text-white text-gray-900 sm:text-xl">
+              {props.title ? props.title.slice(0, 70) : "No title given"}
             </h3>
 
-            <p className="mt-1 text-xs font-medium text-gray-600">
+            <p className="mt-1  text-xs font-medium text-gray-600">
               By {props.name}
             </p>
           </div>
@@ -93,7 +93,7 @@ const Card = (props) => {
           </div>
         </div>
 
-        <div className="">
+        <div className="h-10 overflow-hidden">
           {labelDetails.map((label) => (
             <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1">
               <h3
@@ -107,12 +107,15 @@ const Card = (props) => {
         </div>
 
         <div className="mt-4">
+          {/* <span>Description: </span> */}
           <ReactMarkdown className="max-w-[40ch] text-sm text-gray-500">
-            {props.body ? props.body.slice(0, 100) : props.body}
+            {props.body
+              ? props.body.slice(0, 100)
+              : "No description given , To check the issue click on the link below"}
           </ReactMarkdown>
         </div>
 
-        <Details repoLink={props.repoLink} />
+        {/* <Details repoLink={props.repoLink} /> */}
       </a>
     </>
   );
