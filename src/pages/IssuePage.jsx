@@ -41,13 +41,14 @@ const IssuePage = () => {
                   img={element.user.avatar_url}
                   name={element.user.login}
                   repoLink={element.repository_url}
+                  comment={element.comments}
                 />
               </div>
             ))}
         </div>
 
         {!cardData.loading && (
-          <div className="flex justify-center items-center space-x-2">
+          <div className="flex justify-center items-center space-x-2 m-4">
             <div
               className="text-gray-500 hover:text-blue-600 p-4 inline-flex items-center gap-2 rounded-md"
               onClick={handlePreviousPage}

@@ -63,14 +63,10 @@ const Card = (props) => {
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
   )
-
   return (
     <>
-      <a
-        href={props.link}
-        target="_blank"
-        className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-500 p-4 sm:p-6 lg:p-8"
-      >
+      <a className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-500 p-4 sm:p-6 lg:p-8">
+        {/* <div class="absolute -z-10 inset-0 h-full w-full scale-[0.80] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" /> */}
         <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 
         <div className="sm:flex sm:justify-between sm:gap-4">
@@ -125,7 +121,15 @@ const Card = (props) => {
           </ReactMarkdown>
         </div>
 
-        {/* <Details repoLink={props.repoLink} /> */}
+        {/*  */}
+        <div className="flex justify-between">
+          <Details repoLink={props.repoLink} />
+          <button className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-green-500 text-sm font-medium">
+            <a href={props.link} target="_blank">
+              Click Now
+            </a>
+          </button>
+        </div>
       </a>
     </>
   )
