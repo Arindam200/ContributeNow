@@ -6,6 +6,7 @@ import "./search.css"
 import AuthPage from "./pages/AuthPage"
 
 function App() {
+  document.body.style.backgroundColor = "#000000"
   const theme = "dark"
 
   useEffect(() => {

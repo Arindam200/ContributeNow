@@ -28,26 +28,27 @@ const IssuePage = () => {
       />
       <div className="mx-20">
         <div className=" grid lg:grid-cols-3 gap-2 ">
-          {cardData.data.map((element) => (
-            <div className="flex flex-col  bg-gray-800 text-gray-50 rounded h-fit ">
-              <Card
-                key={element.url}
-                title={element.title}
-                body={element.body}
-                link={element.html_url}
-                labels={element.labels}
-                active={element.created_at}
-                img={element.user.avatar_url}
-                name={element.user.login}
-                repoLink={element.repository_url}
-                comment={element.comments}
-              />
-            </div>
-          ))}
+          {!cardData.loading &&
+            cardData.data.map((element) => (
+              <div className="flex flex-col  bg-gray-800 text-gray-50 rounded h-fit ">
+                <Card
+                  key={element.url}
+                  title={element.title}
+                  body={element.body}
+                  link={element.html_url}
+                  labels={element.labels}
+                  active={element.created_at}
+                  img={element.user.avatar_url}
+                  name={element.user.login}
+                  repoLink={element.repository_url}
+                  comment={element.comments}
+                />
+              </div>
+            ))}
         </div>
 
         {!cardData.loading && (
-          <div className="flex justify-center items-center space-x-2">
+          <div className="flex justify-center items-center space-x-2 m-4">
             <div
               className="text-gray-500 hover:text-blue-600 p-4 inline-flex items-center gap-2 rounded-md"
               onClick={handlePreviousPage}
