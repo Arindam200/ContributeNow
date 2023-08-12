@@ -40,6 +40,7 @@ const IssuePage = () => {
                 img={element.user.avatar_url}
                 name={element.user.login}
                 repoLink={element.repository_url}
+                comment={element.comment}
               />
             </div>
           ))}
