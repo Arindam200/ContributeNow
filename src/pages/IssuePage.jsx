@@ -3,6 +3,7 @@ import ApiContext from "../Context/api/apicontext"
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
 import LoadingBar from "react-top-loading-bar"
+import Skeleton from "react-loading-skeleton"
 
 const IssuePage = () => {
   const cardData = useContext(ApiContext)
@@ -44,46 +45,48 @@ const IssuePage = () => {
           ))}
         </div>
 
-        <div className="flex justify-center items-center space-x-2">
-          <div
-            className="text-gray-500 hover:text-blue-600 p-4 inline-flex items-center gap-2 rounded-md"
-            onClick={handlePreviousPage}
-            disabled={page <= 1}
-          >
-            <span aria-hidden="true">«</span>
-            <span className="sr-only">Previous</span>
-          </div>
-          <div
-            className={`w-10 h-10 hover:text-blue-600 text-gray-500
+        {!cardData.loading && (
+          <div className="flex justify-center items-center space-x-2">
+            <div
+              className="text-gray-500 hover:text-blue-600 p-4 inline-flex items-center gap-2 rounded-md"
+              onClick={handlePreviousPage}
+              disabled={page <= 1}
+            >
+              <span aria-hidden="true">«</span>
+              <span className="sr-only">Previous</span>
+            </div>
+            <div
+              className={`w-10 h-10 hover:text-blue-600 text-gray-500
              p-4 inline-flex items-center text-sm font-medium rounded-full`}
-            onClick={() => cardData.setPageNumber(page <= 1 ? 1 : page)}
-            aria-current="page"
-          >
-            {page <= 1 ? 1 : page}
-          </div>
-          <div
-            className={`w-10 h-10 hover:text-blue-600 text-gray-500
+              onClick={() => cardData.setPageNumber(page <= 1 ? 1 : page)}
+              aria-current="page"
+            >
+              {page <= 1 ? 1 : page}
+            </div>
+            <div
+              className={`w-10 h-10 hover:text-blue-600 text-gray-500
              p-4 inline-flex items-center text-sm font-medium rounded-full`}
-            onClick={() => cardData.setPageNumber(page == 1 ? 2 : page + 1)}
-          >
-            {page <= 1 ? 2 : page + 1}
-          </div>
-          <div
-            className={`w-10 h-10 hover:text-blue-600 text-gray-500
+              onClick={() => cardData.setPageNumber(page == 1 ? 2 : page + 1)}
+            >
+              {page <= 1 ? 2 : page + 1}
+            </div>
+            <div
+              className={`w-10 h-10 hover:text-blue-600 text-gray-500
              p-4 inline-flex items-center text-sm font-medium rounded-full`}
-            onClick={() => cardData.setPageNumber(page == 1 ? 3 : page + 2)}
-          >
-            {page <= 1 ? 3 : page + 2}
+              onClick={() => cardData.setPageNumber(page == 1 ? 3 : page + 2)}
+            >
+              {page <= 1 ? 3 : page + 2}
+            </div>
+            <div
+              className="text-gray-500 hover:text-blue-600 p-4 inline-flex items-center gap-2 rounded-md"
+              onClick={handleNextPage}
+              disabled={page + 1 > Math.ceil(1000 / 15)}
+            >
+              <span className="sr-only">Next</span>
+              <span aria-hidden="true">»</span>
+            </div>
           </div>
-          <div
-            className="text-gray-500 hover:text-blue-600 p-4 inline-flex items-center gap-2 rounded-md"
-            onClick={handleNextPage}
-            disabled={page + 1 > Math.ceil(1000 / 15)}
-          >
-            <span className="sr-only">Next</span>
-            <span aria-hidden="true">»</span>
-          </div>
-        </div>
+        )}
       </div>
     </>
   )
