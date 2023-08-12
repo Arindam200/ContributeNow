@@ -39,11 +39,12 @@ export default function Features() {
                     </svg>
                     <span className="grow ml-6">
                       <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
-                        Advanced tools
+                        Curated Good First Issues
                       </span>
                       <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
-                        Use Preline thoroughly thought and automated libraries
-                        to manage your businesses.
+                        Discover beginner-friendly tasks from diverse open
+                        source projects, handpicked to kickstart your journey
+                        into the world of open source.
                       </span>
                     </span>
                   </span>
@@ -73,11 +74,12 @@ export default function Features() {
                     </svg>
                     <span className="grow ml-6">
                       <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
-                        Smart dashboards
+                        Smart Issue Search
                       </span>
                       <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
-                        Quickly Preline sample components, copy-paste codes, and
-                        start right off.
+                        Find your perfect fit! Utilize advanced search options
+                        to discover Good First Issues aligned with your
+                        interests.
                       </span>
                     </span>
                   </span>
@@ -104,11 +106,11 @@ export default function Features() {
                     </svg>
                     <span className="grow ml-6">
                       <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
-                        Powerful features
+                        Bookmark and Personalize
                       </span>
                       <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200">
-                        Reduce time and effort on building modern look design
-                        with Preline only.
+                        Tailor your journey! Bookmark issues of interest,
+                        creating a personalized list to track.
                       </span>
                     </span>
                   </span>
@@ -208,5 +210,5 @@ export default function Features() {
       </div>
       {/* <!-- End Features --> */}
     </>
-  )
+  );
 }

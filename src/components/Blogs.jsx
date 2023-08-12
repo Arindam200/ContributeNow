@@ -20,33 +20,33 @@ export default function Blogs() {
           {/* <!-- Card --> */}
           <a
             className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]"
-            href="#"
+            href="https://shubhsharma19.hashnode.dev/open-source-for-beginners"
           >
             <div className="aspect-w-16 aspect-h-11">
               <img
                 className="w-full object-cover rounded-xl"
-                src="https://images.unsplash.com/photo-1633114128174-2f8aa49759b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                src="https://cdn.hashnode.com/res/hashnode/image/upload/v1674053979927/c9d6c91a-0a02-45b1-8209-b788a80f5893.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp"
                 alt="Image Description"
               />
             </div>
             <div className="my-6">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:group-hover:text-white">
-                Announcing a free plan for small teams
+                Open Source Guide for Beginners
               </h3>
               <p className="mt-5 text-gray-600 dark:text-gray-400">
-                At Wake, our mission has always been focused on bringing
-                openness.
+                Open Source is a great way to get involved in the tech community
+                and make a positive impact on the world.
               </p>
             </div>
             <div className="mt-auto flex items-center gap-x-3">
               <img
                 className="w-8 h-8 rounded-full"
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                src="https://cdn.hashnode.com/res/hashnode/image/upload/v1675098816229/k_lUv3kpN.png?w=400&h=400&fit=crop&crop=faces&auto=compress,format&format=webp"
                 alt="Image Description"
               />
               <div>
                 <h5 className="text-sm text-gray-800 dark:text-gray-200">
-                  By Lauren Waller
+                  By Shubh Sharma
                 </h5>
               </div>
             </div>
@@ -56,33 +56,33 @@ export default function Blogs() {
           {/* <!-- Card --> */}
           <a
             className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]"
-            href="#"
+            href="https://arindam1729.hashnode.dev/a-beginners-guide-to-open-source"
           >
             <div className="aspect-w-16 aspect-h-11">
               <img
                 className="w-full object-cover rounded-xl"
-                src="https://images.unsplash.com/photo-1562851529-c370841f6536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80"
+                src="https://cdn.hashnode.com/res/hashnode/image/upload/v1673727414736/174f7e4e-43a9-450e-bf63-7103b608c2de.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp"
                 alt="Image Description"
               />
             </div>
             <div className="my-6">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:group-hover:text-white">
-                How Google Assistant now helps you record stories for kids
+                A Beginners Guide to Open Source
               </h3>
               <p className="mt-5 text-gray-600 dark:text-gray-400">
-                Google is constantly updating its consumer AI, Google Assistant,
-                with new features.
+                This beginner's guide to open source will help you to get
+                started on your open-source journey.
               </p>
             </div>
             <div className="mt-auto flex items-center gap-x-3">
               <img
                 className="w-8 h-8 rounded-full"
-                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                src="https://cdn.hashnode.com/res/hashnode/image/upload/v1672587156771/wGaH-wFZE.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp"
                 alt="Image Description"
               />
               <div>
                 <h5 className="text-sm text-gray-800 dark:text-gray-200">
-                  By Aaron Larsson
+                  By Arindam Majumder
                 </h5>
               </div>
             </div>
@@ -92,32 +92,34 @@ export default function Blogs() {
           {/* <!-- Card --> */}
           <a
             className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]"
-            href="#"
+            href="https://ruthikegah.xyz/a-beginners-guide-to-open-source"
           >
             <div className="aspect-w-16 aspect-h-11">
               <img
                 className="w-full object-cover rounded-xl"
-                src="https://images.unsplash.com/photo-1521321205814-9d673c65c167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3548&q=80"
+                src="https://cdn.hashnode.com/res/hashnode/image/upload/v1596742204400/k9AJL1oNC.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp"
                 alt="Image Description"
               />
             </div>
             <div className="my-6">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:group-hover:text-white">
-                Front accounts - let&apos;s work together
+                A Beginner's Guide to Open Source
               </h3>
               <p className="mt-5 text-gray-600 dark:text-gray-400">
-                Are you an accountant? Are you a company formation advisor?
+                In this article, we will be writing about: What Open Source is?
+                Benefits of contributing to Open Source How to start
+                contributing
               </p>
             </div>
             <div className="mt-auto flex items-center gap-x-3">
               <img
                 className="w-8 h-8 rounded-full"
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                src="https://cdn.hashnode.com/res/hashnode/image/upload/v1609530417247/9C1T-TtLp.jpeg?w=400&h=400&fit=crop&crop=faces&auto=compress,format&format=webp"
                 alt="Image Description"
               />
               <div>
                 <h5 className="text-sm text-gray-800 dark:text-gray-200">
-                  By Lauren Waller
+                  By Ruth Ikegah
                 </h5>
               </div>
             </div>
@@ -153,5 +155,5 @@ export default function Blogs() {
       </div>
       {/* <!-- End Card Blog --> */}
     </>
-  )
+  );
 }

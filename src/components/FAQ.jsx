@@ -8,7 +8,7 @@ export default function FAQ() {
           <div className="md:col-span-2">
             <div className="max-w-xs">
               <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-                Frequentlyasked questions
+                Frequently asked questions
               </h2>
               <p className="mt-1 hidden md:block text-gray-600 dark:text-gray-400">
                 Answers to the most frequently asked questions.
@@ -28,7 +28,7 @@ export default function FAQ() {
                   className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-left text-gray-800 transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
                   aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
                 >
-                  Can I cancel at anytime?
+                  What is ContributeNow?
                   <svg
                     className="hs-accordion-active:hidden block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                     width="16"
@@ -66,9 +66,10 @@ export default function FAQ() {
                   aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
                 >
                   <p className="text-gray-600 dark:text-gray-400">
-                    Yes, you can cancel anytime no questions are asked while you
-                    cancel but we would highly appreciate if you will give us
-                    some feedback.
+                    ContributeNow is a platform that connects beginners with
+                    open source projects offering "Good First Issues." These are
+                    tasks specifically designed for newcomers to make their
+                    first contributions to open source software.
                   </p>
                 </div>
               </div>
@@ -81,7 +82,7 @@ export default function FAQ() {
                   className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-left text-gray-800 transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
                   aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
                 >
-                  My team has credits. How do we use them?
+                  How do I get started?
                   <svg
                     className="hs-accordion-active:hidden block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                     width="16"
@@ -119,9 +120,10 @@ export default function FAQ() {
                   aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
                 >
                   <p className="text-gray-600 dark:text-gray-400">
-                    Once your team signs up for a subscription plan. This is
-                    where we sit down, grab a cup of coffee and dial in the
-                    details.
+                    Simply create an account on ContributeNow and explore the
+                    curated list of open source projects and Good First Issues.
+                    Choose an issue that interests you, follow the provided
+                    guidance, and start contributing!
                   </p>
                 </div>
               </div>
@@ -134,7 +136,7 @@ export default function FAQ() {
                   className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-left text-gray-800 transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
                   aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
                 >
-                  How does Preline&apos;s pricing work?
+                  Can I search for specific issues?
                   <svg
                     className="hs-accordion-active:hidden block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                     width="16"
@@ -172,8 +174,10 @@ export default function FAQ() {
                   aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
                 >
                   <p className="text-gray-600 dark:text-gray-400">
-                    Our subscriptions are tiered. Understanding the task at hand
-                    and ironing out the wrinkles is key.
+                    Yes! Our "Smart Issue Search" feature allows you to filter
+                    issues based on your interests, skill level, and preferred
+                    programming languages. This helps you find tasks that align
+                    with your expertise.
                   </p>
                 </div>
               </div>
@@ -186,7 +190,7 @@ export default function FAQ() {
                   className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-left text-gray-800 transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
                   aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
                 >
-                  How secure is Preline?
+                  What if I'm new to coding? Can I still contribute?
                   <svg
                     className="hs-accordion-active:hidden block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                     width="16"
@@ -224,9 +228,10 @@ export default function FAQ() {
                   aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
                 >
                   <p className="text-gray-600 dark:text-gray-400">
-                    Protecting the data you trust to Preline is our first
-                    priority. This part is really crucial in keeping the project
-                    in line to completion.
+                    Absolutely! Good First Issues are designed for beginners. We
+                    provide detailed step-by-step instructions and resources to
+                    help you through the process, regardless of your coding
+                    experience
                   </p>
                 </div>
               </div>
@@ -239,7 +244,7 @@ export default function FAQ() {
                   className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-left text-gray-800 transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
                   aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five"
                 >
-                  How do I get access to a theme I purchased?
+                  How do I keep track of the issues I'm interested in?
                   <svg
                     className="hs-accordion-active:hidden block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                     width="16"
@@ -277,13 +282,10 @@ export default function FAQ() {
                   aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
                 >
                   <p className="text-gray-600 dark:text-gray-400">
-                    If you lose the link for a theme you purchased, don&apos;t
-                    panic! We&apos;ve got you covered. You can login to your
-                    account, tap your avatar in the upper right corner, and tap
-                    Purchases. If you didn&apos;t create a login or can&apos;t
-                    remember the information, you can use our handy Redownload
-                    page, just remember to use the same email you originally
-                    made your purchases with.
+                    You can use our "Bookmark and Personalize" feature to
+                    bookmark issues that catch your attention. This way, you can
+                    create a personalized list of tasks to work on and revisit
+                    later.
                   </p>
                 </div>
               </div>
@@ -296,7 +298,7 @@ export default function FAQ() {
                   className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-left text-gray-800 transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
                   aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six"
                 >
-                  Upgrade License Type
+                  How do I know if an issue is still available?
                   <svg
                     className="hs-accordion-active:hidden block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                     width="16"
@@ -334,10 +336,10 @@ export default function FAQ() {
                   aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
                 >
                   <p className="text-gray-600 dark:text-gray-400">
-                    There may be times when you need to upgrade your license
-                    from the original type you purchased and we have a solution
-                    that ensures you can apply your original purchase cost to
-                    the new license purchase.
+                    Our platform keeps track of the availability of issues in
+                    real-time. If an issue is no longer available, it will be
+                    marked as such, ensuring you're always working on tasks that
+                    are open for contribution.
                   </p>
                 </div>
               </div>
@@ -350,5 +352,5 @@ export default function FAQ() {
       </div>
       {/* <!-- End FAQ --> */}
     </>
-  )
+  );
 }
