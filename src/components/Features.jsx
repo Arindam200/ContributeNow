@@ -208,5 +208,5 @@ export default function Features() {
       </div>
       {/* <!-- End Features --> */}
     </>
-  );
+  )
 }

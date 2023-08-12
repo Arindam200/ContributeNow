@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import ApiContext from "../Context/api/apicontext";
-import { X } from "phosphor-react";
+import { Link } from "react-router-dom"
+import { useContext, useState } from "react"
+import ApiContext from "../Context/api/apicontext"
+import { X } from "phosphor-react"
 
 export default function Navbar() {
-  const searchData = useContext(ApiContext);
-  const [filterData, setFilterData] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
+  const searchData = useContext(ApiContext)
+  const [filterData, setFilterData] = useState([])
+  const [wordEntered, setWordEntered] = useState("")
 
   const handleFilter = (event) => {
-    const searchWord = event.target.value;
-    setWordEntered(searchWord);
+    const searchWord = event.target.value
+    setWordEntered(searchWord)
     const newFilter = searchData.data.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase());
-    });
-    searchWord === "" ? setFilterData([]) : setFilterData(newFilter);
-  };
+      return value.title.toLowerCase().includes(searchWord.toLowerCase())
+    })
+    searchWord === "" ? setFilterData([]) : setFilterData(newFilter)
+  }
   return (
     <header class="flex mb-4 flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-gray-900 border-b border-gray-700 text-sm py-2.5 sm:py-4">
       <nav
@@ -231,5 +231,5 @@ export default function Navbar() {
         </div>
       </nav>
     </header>
-  );
+  )
 }

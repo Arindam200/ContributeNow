@@ -1,21 +1,21 @@
-import { useContext, useState } from "react";
-import ApiContext from "../Context/api/apicontext";
-import Card from "../components/Card";
-import Navbar from "../components/Navbar";
-import LoadingBar from "react-top-loading-bar";
+import { useContext, useState } from "react"
+import ApiContext from "../Context/api/apicontext"
+import Card from "../components/Card"
+import Navbar from "../components/Navbar"
+import LoadingBar from "react-top-loading-bar"
 
 const IssuePage = () => {
-  const cardData = useContext(ApiContext);
-  let page = cardData.pageNumber;
+  const cardData = useContext(ApiContext)
+  let page = cardData.pageNumber
 
   const handleNextPage = () => {
-    page += 1;
-    cardData.setPageNumber(page);
-  };
+    page += 1
+    cardData.setPageNumber(page)
+  }
   const handlePreviousPage = () => {
-    page -= 1;
-    cardData.setPageNumber(page);
-  };
+    page -= 1
+    cardData.setPageNumber(page)
+  }
 
   return (
     <>
@@ -43,10 +43,7 @@ const IssuePage = () => {
             </div>
           ))}
         </div>
-        {/* <div className="flex justify-center mt-5 space-x-0 md:space-x-2 md:mb-8">
-          <button className="inline-flex items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0">
-            Previous
-          </button> */}
+
         <div className="flex justify-center items-center space-x-2">
           <div
             className="text-gray-500 hover:text-blue-600 p-4 inline-flex items-center gap-2 rounded-md"
@@ -87,17 +84,10 @@ const IssuePage = () => {
             <span aria-hidden="true">»</span>
           </div>
         </div>
-        {/* <button
-            className="inline-flex  items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
-
-          >
-            Next
-          </button> */}
-        {/* </div> */}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default IssuePage;
+export default IssuePage
 // " bg-blue-600 text-white"

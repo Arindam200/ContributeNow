@@ -153,5 +153,5 @@ export default function Blogs() {
       </div>
       {/* <!-- End Card Blog --> */}
     </>
-  );
+  )
 }
