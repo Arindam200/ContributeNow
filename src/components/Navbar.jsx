@@ -141,7 +141,7 @@ export default function Navbar() {
               >
                 <img
                   className="inline-block h-[2.375rem] w-[2.375rem] rounded-full"
-                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                  src="https://avatars.githubusercontent.com/u/109217591?v=4"
                   alt="Image Description"
                 />
               </button>
@@ -155,7 +155,7 @@ export default function Navbar() {
                     Signed in as
                   </p>
                   <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    james@site.com
+                    Arindam Majumder
                   </p>
                 </div>
                 <div className="mt-2 py-2 first:pt-0 last:pb-0">

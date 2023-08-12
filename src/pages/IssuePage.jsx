@@ -25,7 +25,7 @@ const IssuePage = () => {
         progress={cardData.progress}
         onLoaderFinished={() => cardData.setProgress(0)}
       />
-      <div className="mx-auto">
+      <div className="mx-20">
         <div className=" grid lg:grid-cols-3 gap-2 ">
           {cardData.data.map((element) => (
             <div className="flex flex-col  bg-gray-800 text-gray-50 rounded h-fit ">
@@ -87,13 +87,6 @@ const IssuePage = () => {
             <span aria-hidden="true">»</span>
           </div>
         </div>
-        {/* <button
-            className="inline-flex  items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
-
-          >
-            Next
-          </button> */}
-        {/* </div> */}
       </div>
     </>
   );
@@ -101,3 +94,14 @@ const IssuePage = () => {
 
 export default IssuePage;
 // " bg-blue-600 text-white"
+{
+  /* <button
+            className="inline-flex  items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
+
+          >
+            Next
+          </button> */
+}
+{
+  /* </div> */
+}

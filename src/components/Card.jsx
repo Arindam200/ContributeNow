@@ -75,7 +75,7 @@ const Card = (props) => {
 
         <div className="sm:flex sm:justify-between sm:gap-4">
           <div>
-            <h3 className="text-lg lg:h-[60px] font-bold dark:text-white text-gray-900 sm:text-xl">
+            <h3 className="text-lg overflow-hidden lg:h-[60px] font-bold dark:text-white text-gray-900 sm:text-xl">
               {props.title ? props.title.slice(0, 70) : "No title given"}
             </h3>
 
@@ -95,10 +95,20 @@ const Card = (props) => {
 
         <div className="h-10 overflow-hidden">
           {labelDetails.map((label) => (
-            <span className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1">
+            <span
+              style={{
+                color: "#" + label.color,
+                borderColor: "#" + label.color,
+
+                // backgroundColor: "#" + label.color,
+              }}
+              className="mt-2 me-2 inline-block py-1 px-2 rounded-full border  last:mr-0 mr-1"
+            >
               <h3
                 className="text-xs font-semibold"
-                style={{ color: "#" + label.color }}
+                style={{
+                  color: "#" + label.color,
+                }}
               >
                 {label.text}
               </h3>
@@ -106,7 +116,7 @@ const Card = (props) => {
           ))}
         </div>
 
-        <div className="mt-4">
+        <div className="mt-4 h-16 overflow-hidden">
           {/* <span>Description: </span> */}
           <ReactMarkdown className="max-w-[40ch] text-sm text-gray-500">
             {props.body
