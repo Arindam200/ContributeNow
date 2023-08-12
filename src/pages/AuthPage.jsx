@@ -5,6 +5,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { useState } from "react";
+import {Link} from "react-router-dom"
 
 const AuthPage = () => {
   const [email, setEmail] = useState("");
@@ -32,7 +33,7 @@ const AuthPage = () => {
         onChange={(e) => setPassword(e.target.value)}
         type="password"
       />
-      <button onClick={signIn}>Sign In</button>
+      <button onClick={signIn}><Link to="/list">Sign In</Link></button>
       <button onClick={logOut}>Log Out</button>
     </div>
   );
