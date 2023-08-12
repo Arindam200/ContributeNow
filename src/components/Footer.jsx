@@ -1,14 +1,14 @@
 export default function Footer() {
   return (
     <>
-      <footer className="bg-gray-900">
+      <footer className="bg-gray-900 ">
         <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">
           {/* <!-- Grid --> */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             <div className="col-span-full lg:col-span-1">
               <a
                 className="flex-none text-xl font-semibold text-white"
-                href="#"
+                href="/"
                 aria-label="Brand"
               >
                 Brand
@@ -167,7 +167,7 @@ export default function Footer() {
               </a>
               <a
                 className="inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-200 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition"
-                href="#"
+                href="/"
               >
                 <svg
                   className="w-4 h-4"
@@ -184,7 +184,7 @@ export default function Footer() {
             {/* <!-- End Social Brands --> */}
           </div>
         </div>
-      </footer>{" "}
+      </footer>
     </>
-  );
+  )
 }
