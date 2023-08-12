@@ -33,7 +33,6 @@ const AuthPage = () => {
         onChange={(e) => setPassword(e.target.value)}
         type="password"
       />
-
       <button onClick={signIn} className="dark:text-white">
         <Link to="/list">Sign In</Link>
       </button>

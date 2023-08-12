@@ -1,5 +1,7 @@
 import ApiContext from "./apicontext"
 import { useState, useEffect } from "react"
+import Skeleton from "react-loading-skeleton"
+import "react-loading-skeleton/dist/skeleton.css"
 
 const apiState = (props) => {
   const [data, setData] = useState([])
@@ -13,7 +15,8 @@ const apiState = (props) => {
       setProgress(10)
       const parsedData = await issueData.json()
       setProgress(30)
-      setData(parsedData.items)
+      setTimeout(() => setData(parsedData.items), 2000)
+
       setProgress(100)
     }
 
