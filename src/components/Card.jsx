@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Details from "./Details";
 import ReactMarkdown from "react-markdown";
+import IssueDetails from "./IssueDetails";
 const Card = (props) => {
   const labelDetails = [];
   const currentTime = Date.now();
@@ -123,11 +124,15 @@ const Card = (props) => {
 
         <div className="flex justify-between">
           <Details repoLink={props.repoLink} />
-          <button className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-white bg-green-500 hover:bg-inherit hover:text-green-500 text-sm font-medium">
-            <a href={props.link} target="_blank">
-              Click Now
-            </a>
+          <button
+            data-hs-overlay="#hs-modal-upgrade-to-pro"
+            className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-white bg-green-500 hover:bg-inherit hover:text-green-500 text-sm font-medium"
+          >
+            {/* <a href={props.link} target="_blank"> */}
+            Click Now
+            {/* </a> */}
           </button>
+          <IssueDetails props={props} />
         </div>
       </a>
     </>
