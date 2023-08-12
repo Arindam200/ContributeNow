@@ -11,6 +11,14 @@ const AuthPage = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   const signIn = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password)
@@ -35,7 +43,9 @@ const AuthPage = () => {
       />
       <button onClick={signIn} className="dark:text-white">
         <Link to="/list">Sign In</Link>
-        Sign In
+      </button>
+      <button onClick={signIn} className="dark:text-white">
+        Google
       </button>
       <button onClick={logOut} className="dark:text-white">
         Log Out
