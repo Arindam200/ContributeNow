@@ -73,7 +73,7 @@ export default function Navbar() {
                 id="icon"
                 name="icon"
                 className="py-2 px-4 pl-11 pr-20 block w-92 md:w-96 bg-transparent border-gray-700 shadow-sm rounded-full text-sm text-gray-300 focus:z-10 focus:border-gray-900 focus:ring-gray-600 placeholder:text-gray-500"
-                placeholder="search"
+                placeholder="Search"
                 onChange={handleFilter}
               />
               {/* needs design here to showcase the data as a list while searching */}

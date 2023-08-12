@@ -26,9 +26,9 @@ const Details = (props) => {
   return (
     <div>
       <a
-        href={repoDetails.link}
-        target="_blank"
-        className="flex gap-1 justify-around"
+        // href={repoDetails.link}
+        // target="_blank"
+        className="flex gap-5 justify-around text-grey-500  text-sm font-medium"
       >
         <h4>{repoDetails.name}</h4>
         <p>{repoDetails.star}</p>
