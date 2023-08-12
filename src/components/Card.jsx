@@ -69,7 +69,7 @@ const Card = (props) => {
       <a
         href={props.link}
         target="_blank"
-        className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-100 p-4 sm:p-6 lg:p-8"
+        className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-500 p-4 sm:p-6 lg:p-8"
       >
         <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 

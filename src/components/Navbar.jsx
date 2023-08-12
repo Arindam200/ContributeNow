@@ -78,12 +78,12 @@ export default function Navbar() {
               />
               {/* needs design here to showcase the data as a list while searching */}
               {filterData.length !== 0 && (
-                <div className="dataResult">
+                <div className="dataResult bg-gray-800 text-white absolute z-50 rounded-lg mt-2 h-52 overflow-y-auto overflow-x-hidden">
                   {filterData.map((value) => (
                     <a
                       href={value.html_url}
                       target="_blank"
-                      className="dataItem"
+                      className="dataItem mx-auto w-full px-4 py-2 hover:bg-gray-700 border-b border-gray-700 block"
                     >
                       <p>{value.title}</p>
                     </a>
