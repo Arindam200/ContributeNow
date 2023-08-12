@@ -1,21 +1,21 @@
-import React, { useEffect } from "react"
-import { Routes, Route } from "react-router-dom"
-import IssuePage from "./pages/IssuePage"
-import LandingPage from "./pages/LandingPage"
-import "./search.css"
-import AuthPage from "./pages/AuthPage"
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import IssuePage from "./pages/IssuePage";
+import LandingPage from "./pages/LandingPage";
+import "./search.css";
+import AuthPage from "./pages/AuthPage";
 
 function App() {
-  document.body.style.backgroundColor = "#000000"
-  const theme = "dark"
+  document.body.style.backgroundColor = "#000000";
+  const theme = "dark";
 
   useEffect(() => {
     if (theme === "dark") {
-      document.documentElement.classList.add("dark")
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark")
+      document.documentElement.classList.remove("dark");
     }
-  }, [theme])
+  }, [theme]);
 
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
         </Routes>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
