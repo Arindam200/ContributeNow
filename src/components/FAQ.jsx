@@ -350,5 +350,5 @@ export default function FAQ() {
       </div>
       {/* <!-- End FAQ --> */}
     </>
-  );
+  )
 }
