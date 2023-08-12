@@ -62,6 +62,7 @@ const Card = (props) => {
 
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
+  );
   return (
     <>
       <a className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-500 p-4 sm:p-6 lg:p-8">
@@ -74,7 +75,7 @@ const Card = (props) => {
               {props.title ? props.title.slice(0, 70) : "No title given"}
             </h3>
 
-            <p className="mt-1  text-xs font-medium text-gray-600">
+            <p className="mt-1 text-sm font-medium text-gray-600">
               By {props.name}
             </p>
           </div>
@@ -111,7 +112,7 @@ const Card = (props) => {
           ))}
         </div>
 
-        <div className="mt-4 h-16 overflow-hidden">
+        <div className="mt-3 h-16 overflow-hidden">
           {/* <span>Description: </span> */}
           <ReactMarkdown className="max-w-[40ch] text-sm text-gray-500">
             {props.body
@@ -120,7 +121,6 @@ const Card = (props) => {
           </ReactMarkdown>
         </div>
 
-        
         <div className="flex justify-between">
           <Details repoLink={props.repoLink} />
           <button className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-white bg-green-500 hover:bg-inherit hover:text-green-500 text-sm font-medium">
