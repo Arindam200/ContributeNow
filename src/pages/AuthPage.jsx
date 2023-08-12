@@ -35,6 +35,7 @@ const AuthPage = () => {
       />
       <button onClick={signIn} className="dark:text-white">
         <Link to="/list">Sign In</Link>
+        Sign In
       </button>
       <button onClick={logOut} className="dark:text-white">
         Log Out
