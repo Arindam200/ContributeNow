@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react"
-import Details from "./Details"
-import ReactMarkdown from "react-markdown"
+import { useState, useEffect } from "react";
+import Details from "./Details";
+import ReactMarkdown from "react-markdown";
 const Card = (props) => {
-  const labelDetails = []
-  const currentTime = Date.now()
-  const createdDate = new Date(props.active)
-  const updatedDate = new Date(props.update)
+  const labelDetails = [];
+  const currentTime = Date.now();
+  const createdDate = new Date(props.active);
+  const updatedDate = new Date(props.update);
 
-  const timeInMiliSecondsForCreate = currentTime - createdDate
-  const timeInMiliSecondsForUpdate = currentTime - updatedDate
+  const timeInMiliSecondsForCreate = currentTime - createdDate;
+  const timeInMiliSecondsForUpdate = currentTime - updatedDate;
   const [timeCreate, setTimeCreate] = useState({
     Years: 0,
     Months: 0,
@@ -16,7 +16,7 @@ const Card = (props) => {
     Hours: 0,
     Minutes: 0,
     Seconds: 0,
-  })
+  });
   const [timeUpdate, setTimeUpdate] = useState({
     Years: 0,
     Months: 0,
@@ -24,7 +24,7 @@ const Card = (props) => {
     Hours: 0,
     Minutes: 0,
     Seconds: 0,
-  })
+  });
 
   const issueActivationTime = () => {
     setTimeCreate({
@@ -38,8 +38,8 @@ const Card = (props) => {
       Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
       Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
       Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
-    })
-  }
+    });
+  };
   const issueUpdatationTime = () => {
     setTimeUpdate({
       Years: Math.floor(
@@ -52,17 +52,17 @@ const Card = (props) => {
       Hours: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60 * 60)) % 24),
       Minutes: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60)) % 60),
       Seconds: Math.floor((timeInMiliSecondsForUpdate / 1000) % 60),
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    issueActivationTime()
-    issueUpdatationTime()
-  }, [])
+    issueActivationTime();
+    issueUpdatationTime();
+  }, []);
 
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
-  )
+  );
 
   return (
     <>
@@ -122,10 +122,10 @@ const Card = (props) => {
           </ReactMarkdown>
         </div>
 
-        {/*  */}
+        
         <div className="flex justify-between">
           <Details repoLink={props.repoLink} />
-          <button className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-green-500 text-sm font-medium">
+          <button className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-white bg-green-500 hover:bg-inherit hover:text-green-500 text-sm font-medium">
             <a href={props.link} target="_blank">
               Click Now
             </a>
@@ -133,10 +133,10 @@ const Card = (props) => {
         </div>
       </a>
     </>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
 
 // border-red-500 text-red-600 bg-red-200
 // how to add dynamic classes in tailwind
