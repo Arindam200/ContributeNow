@@ -63,7 +63,6 @@ const Card = (props) => {
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
   )
-
   return (
     <>
       <a className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-500 p-4 sm:p-6 lg:p-8">
