@@ -76,7 +76,6 @@ export default function SignupPage() {
                           type="email"
                           id="email"
                           name="email"
-                          ref={emailRef}
                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
                           required
                           // aria-describedby="email-error"
@@ -117,7 +116,6 @@ export default function SignupPage() {
                           type="password"
                           id="password"
                           name="password"
-                          ref={passwordRef}
                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
                           required
                           aria-describedby="password-error"
@@ -157,7 +155,6 @@ export default function SignupPage() {
                           type="password"
                           id="confirm-password"
                           name="confirm-password"
-                          ref={passwordConfirmRef}
                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
                           required
                           aria-describedby="confirm-password-error"
