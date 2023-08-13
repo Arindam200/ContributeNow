@@ -26,6 +26,7 @@ export default function SignUpPage() {
   }
 
   return (
+
     <div className="dark:bg-slate-900 bg-gray-100 flex h-full items-center py-16">
       <main className="w-full max-w-md mx-auto p-6">
         <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
@@ -44,6 +45,7 @@ export default function SignUpPage() {
                 </Link>
               </p>
             </div>
+
 
             <div className="mt-5">
               <button
@@ -252,7 +254,10 @@ export default function SignUpPage() {
             </div>
           </div>
         </div>
-      </main>
+
+
+      </div>
     </div>
-  )
+  );
+
 }
