@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Image from "../assets/brandbird.png";
 export default function Hero() {
   return (
     <>
@@ -16,9 +17,7 @@ export default function Hero() {
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
             <Link
-
               to="/signup"
-
               className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
             >
               Get Started
@@ -57,12 +56,12 @@ export default function Hero() {
         </div>
         <div className="w-full mx-auto mt-20 text-center md:w-10/12">
           <img
-            src="/"
+            src={Image}
             alt="Hellonext feedback boards software screenshot"
-            className="w-full rounded-lg shadow-2xl"
+            className="w-full rounded-xl shadow-2xl shadow-blue-500"
           />
         </div>
       </section>
     </>
-  )
+  );
 }
