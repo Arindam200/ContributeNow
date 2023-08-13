@@ -1,29 +1,29 @@
-import { auth, googleProvider } from "../Config/firebase"
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth"
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { auth, googleProvider } from "../Config/firebase";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SignUpPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   // const [realPassword, setRealPassword] = useState("")
   // const [confirmPassword, setConfirmPassword] = useState("")
 
   const signIn = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(auth, email, password);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
 
   const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, googleProvider)
+      await signInWithPopup(auth, googleProvider);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
 
   return (
     <div className="dark:bg-slate-900 bg-gray-100 flex h-full items-center py-16">
