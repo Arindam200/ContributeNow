@@ -32,7 +32,9 @@ const AuthPage = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+
+  }
+
   return (
     <>
       {/* <div className="dark:text-black"> */}
