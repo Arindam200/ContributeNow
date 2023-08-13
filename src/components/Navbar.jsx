@@ -1,21 +1,22 @@
-import { Link } from "react-router-dom"
-import { useContext, useState } from "react"
-import ApiContext from "../Context/api/apicontext"
-import { X } from "phosphor-react"
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import ApiContext from "../Context/api/apicontext";
+import { X } from "phosphor-react";
+import Signout_modal from "./Signout_modal";
 
 export default function Navbar() {
-  const searchData = useContext(ApiContext)
-  const [filterData, setFilterData] = useState([])
-  const [wordEntered, setWordEntered] = useState("")
+  const searchData = useContext(ApiContext);
+  const [filterData, setFilterData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
 
   const handleFilter = (event) => {
-    const searchWord = event.target.value
-    setWordEntered(searchWord)
+    const searchWord = event.target.value;
+    setWordEntered(searchWord);
     const newFilter = searchData.data.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase())
-    })
-    searchWord === "" ? setFilterData([]) : setFilterData(newFilter)
-  }
+      return value.title.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    searchWord === "" ? setFilterData([]) : setFilterData(newFilter);
+  };
   return (
     <header class="flex mb-4 flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-gray-900 border-b border-gray-700 text-sm py-2.5 sm:py-4">
       <nav
@@ -211,8 +212,9 @@ export default function Navbar() {
                   </a>
                   <a
                     className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                    to="#"
+                    data-hs-overlay="#hs-sign-out-alert"
                   >
+                    {/* <Signout_modal /> */}
                     <svg
                       className="flex-none"
                       width="16"
@@ -222,7 +224,7 @@ export default function Navbar() {
                     >
                       <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
                     </svg>
-                    Team Account
+                    Log Out
                   </a>
                 </div>
               </div>
@@ -231,5 +233,5 @@ export default function Navbar() {
         </div>
       </nav>
     </header>
-  )
+  );
 }

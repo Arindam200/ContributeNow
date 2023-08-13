@@ -4,6 +4,8 @@ import IssuePage from "./pages/IssuePage"
 import LandingPage from "./pages/LandingPage"
 import "./search.css"
 import AuthPage from "./pages/AuthPage"
+import SignUpPage from "./pages/Signup"
+import LoginPage from "./pages/Login"
 
 function App() {
   document.body.style.backgroundColor = "#000000"
@@ -23,6 +25,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/list" element={<IssuePage />} />
+          <Route exact path="/signup" element={<SignUpPage />} />
+          <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/auth" element={<AuthPage />} />
         </Routes>
       </div>

@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react"
-import Details from "./Details"
-import ReactMarkdown from "react-markdown"
+import { useState, useEffect } from "react";
+import Details from "./Details";
+import ReactMarkdown from "react-markdown";
+import IssueDetails from "./IssueDetails";
 const Card = (props) => {
-  const labelDetails = []
-  const currentTime = Date.now()
-  const createdDate = new Date(props.active)
-  const updatedDate = new Date(props.update)
+  const labelDetails = [];
+  const currentTime = Date.now();
+  const createdDate = new Date(props.active);
+  const updatedDate = new Date(props.update);
 
-  const timeInMiliSecondsForCreate = currentTime - createdDate
-  const timeInMiliSecondsForUpdate = currentTime - updatedDate
+  const timeInMiliSecondsForCreate = currentTime - createdDate;
+  const timeInMiliSecondsForUpdate = currentTime - updatedDate;
   const [timeCreate, setTimeCreate] = useState({
     Years: 0,
     Months: 0,
@@ -16,7 +17,7 @@ const Card = (props) => {
     Hours: 0,
     Minutes: 0,
     Seconds: 0,
-  })
+  });
   const [timeUpdate, setTimeUpdate] = useState({
     Years: 0,
     Months: 0,
@@ -24,7 +25,7 @@ const Card = (props) => {
     Hours: 0,
     Minutes: 0,
     Seconds: 0,
-  })
+  });
 
   const issueActivationTime = () => {
     setTimeCreate({
@@ -38,8 +39,8 @@ const Card = (props) => {
       Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
       Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
       Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
-    })
-  }
+    });
+  };
   const issueUpdatationTime = () => {
     setTimeUpdate({
       Years: Math.floor(
@@ -52,17 +53,17 @@ const Card = (props) => {
       Hours: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60 * 60)) % 24),
       Minutes: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60)) % 60),
       Seconds: Math.floor((timeInMiliSecondsForUpdate / 1000) % 60),
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    issueActivationTime()
-    issueUpdatationTime()
-  }, [])
+    issueActivationTime();
+    issueUpdatationTime();
+  }, []);
 
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
-  )
+  );
   return (
     <>
       <a className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-500 p-4 sm:p-6 lg:p-8">
@@ -75,7 +76,7 @@ const Card = (props) => {
               {props.title ? props.title.slice(0, 70) : "No title given"}
             </h3>
 
-            <p className="mt-1  text-xs font-medium text-gray-600">
+            <p className="mt-1 text-sm font-medium text-gray-600">
               By {props.name}
             </p>
           </div>
@@ -112,7 +113,7 @@ const Card = (props) => {
           ))}
         </div>
 
-        <div className="mt-4 h-16 overflow-hidden">
+        <div className="mt-3 h-16 overflow-hidden">
           {/* <span>Description: </span> */}
           <ReactMarkdown className="max-w-[40ch] text-sm text-gray-500">
             {props.body
@@ -121,21 +122,24 @@ const Card = (props) => {
           </ReactMarkdown>
         </div>
 
-        {/*  */}
         <div className="flex justify-between">
           <Details repoLink={props.repoLink} />
-          <button className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-green-500 text-sm font-medium">
-            <a href={props.link} target="_blank">
-              Click Now
-            </a>
+          <button
+            data-hs-overlay="#hs-modal-upgrade-to-pro"
+            className="mt-2 px-4 py-2 rounded-xl border border-green-500 text-white bg-green-500 hover:bg-inherit hover:text-green-500 text-sm font-medium"
+          >
+            {/* <a href={props.link} target="_blank"> */}
+            Click Now
+            {/* </a> */}
           </button>
+          <IssueDetails props={props} />
         </div>
       </a>
     </>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
 
 // border-red-500 text-red-600 bg-red-200
 // how to add dynamic classes in tailwind
