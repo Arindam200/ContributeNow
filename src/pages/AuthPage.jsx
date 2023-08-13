@@ -1,38 +1,37 @@
-import { auth, googleProvider } from "../Config/firebase";
+import { auth, googleProvider } from "../Config/firebase"
 import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   signOut,
-} from "firebase/auth";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+} from "firebase/auth"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const AuthPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(auth, googleProvider)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-  };
+  }
 
   const signIn = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-  };
+  }
   const logOut = async () => {
     try {
-      await signOut(auth, googleProvider);
+      await signOut(auth, googleProvider)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-
   }
 
   return (
@@ -126,7 +125,7 @@ const AuthPage = () => {
                             required
                             // aria-describedby="email-error"
                           />
-                          <div class="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
+                          <div class="hidden absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
                             <svg
                               class="h-5 w-5 text-red-500"
                               width="16"
@@ -167,7 +166,7 @@ const AuthPage = () => {
                             required
                             aria-describedby="password-error"
                           />
-                          <div class="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
+                          <div class="hidden absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
                             <svg
                               class="h-5 w-5 text-red-500"
                               width="16"
@@ -206,7 +205,7 @@ const AuthPage = () => {
                             required
                             aria-describedby="confirm-password-error"
                           />
-                          <div class="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
+                          <div class="hidden absolute inset-y-0 right-0 items-center pointer-events-none pr-3">
                             <svg
                               class="h-5 w-5 text-red-500"
                               width="16"
@@ -271,7 +270,7 @@ const AuthPage = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default AuthPage;
+export default AuthPage
