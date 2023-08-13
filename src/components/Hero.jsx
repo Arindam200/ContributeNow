@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 export default function Hero() {
   return (
     <>
@@ -16,7 +16,7 @@ export default function Hero() {
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
             <Link
-              to="/Signup"
+              to="/signup"
               className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
             >
               Get Started
@@ -62,5 +62,5 @@ export default function Hero() {
         </div>
       </section>
     </>
-  );
+  )
 }
