@@ -33,6 +33,7 @@ const AuthPage = () => {
       console.log(err)
     }
   }
+
   return (
     <div className="dark:text-black">
       <input placeholder="Email.." onChange={(e) => setEmail(e.target.value)} />
