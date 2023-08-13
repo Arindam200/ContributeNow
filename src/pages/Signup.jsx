@@ -26,9 +26,8 @@ export default function SignUpPage() {
   }
 
   return (
-
     <div className="dark:bg-slate-900 bg-gray-100 flex h-full items-center py-16">
-      <main className="w-full max-w-md mx-auto p-6">
+      <div className="w-full max-w-md mx-auto p-6">
         <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div className="p-4 sm:p-7">
             <div className="text-center">
@@ -45,7 +44,6 @@ export default function SignUpPage() {
                 </Link>
               </p>
             </div>
-
 
             <div className="mt-5">
               <button
@@ -84,7 +82,6 @@ export default function SignUpPage() {
                 Or
               </div>
 
-
               {/* <!-- Form --> */}
               <form>
                 <div className="grid gap-y-4">
@@ -117,7 +114,6 @@ export default function SignUpPage() {
                         >
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                         </svg>
-
                       </div>
                     </div>
                     <p
@@ -129,7 +125,6 @@ export default function SignUpPage() {
                     </p>
                   </div>
                   {/* <!-- End Form Group --> */}
-
 
                   {/* <!-- Form Group --> */}
                   <div>
@@ -160,7 +155,6 @@ export default function SignUpPage() {
                         >
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                         </svg>
-
                       </div>
                     </div>
                     <p
@@ -254,10 +248,7 @@ export default function SignUpPage() {
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
-  );
-
+  )
 }
