@@ -1,22 +1,22 @@
-import { useContext, useState } from "react"
-import ApiContext from "../Context/api/apicontext"
-import Card from "../components/Card"
-import Navbar from "../components/Navbar"
-import LoadingBar from "react-top-loading-bar"
-import Skeleton from "react-loading-skeleton"
+import { useContext, useState } from "react";
+import ApiContext from "../Context/api/apicontext";
+import Card from "../components/Card";
+import Navbar from "../components/Navbar";
+import LoadingBar from "react-top-loading-bar";
+import Skeleton from "react-loading-skeleton";
 
 const IssuePage = () => {
-  const cardData = useContext(ApiContext)
-  let page = cardData.pageNumber
+  const cardData = useContext(ApiContext);
+  let page = cardData.pageNumber;
 
   const handleNextPage = () => {
-    page += 1
-    cardData.setPageNumber(page)
-  }
+    page += 1;
+    cardData.setPageNumber(page);
+  };
   const handlePreviousPage = () => {
-    page -= 1
-    cardData.setPageNumber(page)
-  }
+    page -= 1;
+    cardData.setPageNumber(page);
+  };
 
   return (
     <>
@@ -26,7 +26,7 @@ const IssuePage = () => {
         progress={cardData.progress}
         onLoaderFinished={() => cardData.setProgress(0)}
       />
-      <div className="mx-20">
+      <div className="lg:mx-20 mx-1">
         <div className=" grid lg:grid-cols-3 gap-2 ">
           {!cardData.loading &&
             cardData.data.map((element) => (
@@ -91,10 +91,10 @@ const IssuePage = () => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default IssuePage
+export default IssuePage;
 // " bg-blue-600 text-white"
 {
   /* <button
