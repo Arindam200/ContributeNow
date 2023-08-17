@@ -1,13 +1,13 @@
-import React from "react"
-import Details from "./Details"
-import ReactMarkdown from "react-markdown"
+import React from "react";
+import Details from "./Details";
+import ReactMarkdown from "react-markdown";
 
 export default function IssueDetails({ props }) {
-  const labelDetails = []
+  const labelDetails = [];
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
-  )
-  console.log({ props })
+  );
+
   return (
     <>
       {/* <!-- Modal --> */}
@@ -82,5 +82,5 @@ export default function IssueDetails({ props }) {
         </div>
       </div>
     </>
-  )
+  );
 }
