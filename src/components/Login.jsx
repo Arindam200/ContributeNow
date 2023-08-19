@@ -15,7 +15,7 @@ export default function LoginPage(props) {
       localStorage.setItem("user", true);
       navigate("/list");
     } catch (err) {
-      console.log(err);
+      alert("email or password was incorrect");
     }
   };
   return (
@@ -103,7 +103,7 @@ export default function LoginPage(props) {
         {/* <!-- End Form Group --> */}
 
         {/* <!-- Checkbox --> */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <div className="flex">
             <input
               id="remember-me"
@@ -112,12 +112,12 @@ export default function LoginPage(props) {
               className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
             />
           </div>
-          <div className="ml-3">
+          {/* <div className="ml-3">
             <label htmlFor="remember-me" className="text-sm dark:text-white">
               Remember me
             </label>
-          </div>
-        </div>
+          </div> 
+        </div> 
         {/* <!-- End Checkbox --> */}
 
         <button

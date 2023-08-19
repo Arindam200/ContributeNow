@@ -18,7 +18,7 @@ export default function SignUpPage(props) {
           localStorage.setItem("user", true);
           navigate("/list");
         } catch (err) {
-          console.log(err);
+          alert("Email is already in use");
         }
       } else {
         alert("Password does not match the confirm password");
