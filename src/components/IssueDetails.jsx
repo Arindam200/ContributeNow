@@ -7,14 +7,17 @@ export default function IssueDetails({ props }) {
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
   );
+
   return (
     <>
       {/* <!-- Modal --> */}
+      {/* <div>{props.name}</div> */}
+
       <div
         id="hs-modal-upgrade-to-pro"
         className="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto"
       >
-        {/* <div className=""> Hello {props.title} </div> */}
+        {/*  <div className=""> Hello {props.title} </div>  */}
         <div className="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
           <div className="bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <div className="p-4 sm:p-7">
@@ -59,7 +62,7 @@ export default function IssueDetails({ props }) {
                 ))}
               </div>
               <div className="mt-3 text-center overflow-hidden">
-                {/* <span>Description: </span> */}
+                {/* {/* <span>Description: </span>  */}
                 <ReactMarkdown className=" text-lg text-gray-500">
                   {props.body
                     ? props.body

@@ -1,13 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 import ApiContext from "../Context/api/apicontext";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import LoadingBar from "react-top-loading-bar";
 import Skeleton from "react-loading-skeleton";
+import { useNavigate } from "react-router-dom";
 
 const IssuePage = () => {
   const cardData = useContext(ApiContext);
   let page = cardData.pageNumber;
+  let navigate = useNavigate();
 
   const handleNextPage = () => {
     page += 1;
@@ -17,6 +19,12 @@ const IssuePage = () => {
     page -= 1;
     cardData.setPageNumber(page);
   };
+
+  useEffect(() => {
+    if (!cardData.isAuth) {
+      navigate("/auth");
+    }
+  }, []);
 
   return (
     <>
