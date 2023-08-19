@@ -37,7 +37,7 @@ export default function Hero() {
                 />
               </svg>
             </Link>
-            {a.isAuth ? (
+            {localStorage.getItem("user") ? (
               <Link
                 to="/list"
                 className="inline-flex items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"

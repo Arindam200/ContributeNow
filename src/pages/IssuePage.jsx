@@ -3,13 +3,13 @@ import ApiContext from "../Context/api/apicontext";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import LoadingBar from "react-top-loading-bar";
-import Skeleton from "react-loading-skeleton";
 import { useNavigate } from "react-router-dom";
 
 const IssuePage = () => {
   const cardData = useContext(ApiContext);
   let page = cardData.pageNumber;
   let navigate = useNavigate();
+  let data = localStorage.getItem("user");
 
   const handleNextPage = () => {
     page += 1;
@@ -21,7 +21,9 @@ const IssuePage = () => {
   };
 
   useEffect(() => {
-    if (!cardData.isAuth) {
+    if (data) {
+      navigate("/list");
+    } else if (!cardData.isAuth) {
       navigate("/auth");
     }
   }, []);
@@ -40,6 +42,7 @@ const IssuePage = () => {
             cardData.data.map((element) => (
               <div className="flex flex-col  bg-gray-800 text-gray-50 rounded h-fit ">
                 <Card
+                  id={element.id}
                   key={element.url}
                   title={element.title}
                   body={element.body}
