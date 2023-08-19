@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import Image from "../assets/brandbird.png";
-import Context from "../Context/api/apicontext";
-import { useContext } from "react";
+import Image from "../assets/images/brandbird.png";
+
 export default function Hero() {
-  let a = useContext(Context);
   return (
     <>
       <section className="px-4 py-24 mx-auto max-w-7xl">
@@ -19,25 +17,47 @@ export default function Hero() {
             Meaningful Contributions
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
-            <Link
-              to="/auth"
-              className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
-            >
-              Get Started
-              <svg
-                className="w-4 h-4 ml-1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+            {localStorage.getItem("user") ? (
+              <Link
+                to="/list"
+                className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
-            {a.isAuth ? (
+                Get Started
+                <svg
+                  className="w-4 h-4 ml-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
+            ) : (
+              <Link
+                to="/auth"
+                className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
+              >
+                Get Started
+                <svg
+                  className="w-4 h-4 ml-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
+            )}
+
+            {/* {localStorage.getItem("user") ? (
               <Link
                 to="/list"
                 className="inline-flex items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
@@ -75,13 +95,13 @@ export default function Hero() {
                   />
                 </svg>
               </Link>
-            )}
+            )} */}
           </div>
         </div>
         <div className="w-full mx-auto mt-20 text-center md:w-10/12">
           <img
             src={Image}
-            alt="Hellonext feedback boards software screenshot"
+            alt="Hello next feedback boards software screenshot"
             className="w-full rounded-xl shadow-2xl shadow-blue-500"
           />
         </div>

@@ -3,11 +3,16 @@ import { useContext, useState } from "react";
 import ApiContext from "../Context/api/apicontext";
 import { X } from "phosphor-react";
 import Signout_modal from "./Signout_modal";
+import { auth, googleProvider } from "../Config/firebase";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const searchData = useContext(ApiContext);
   const [filterData, setFilterData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
+
+  let navigate = useNavigate();
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
@@ -16,6 +21,16 @@ export default function Navbar() {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
     searchWord === "" ? setFilterData([]) : setFilterData(newFilter);
+  };
+
+  const logOut = async () => {
+    try {
+      await signOut(auth, googleProvider);
+      localStorage.removeItem("user");
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <header className="flex mb-4 flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-gray-900 border-b border-gray-700 text-sm py-2.5 sm:py-4">
@@ -210,9 +225,10 @@ export default function Navbar() {
                     </svg>
                     Downloads
                   </a>
-                  <a
+                  <button
                     className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                     data-hs-overlay="#hs-sign-out-alert"
+                    onClick={logOut}
                   >
                     {/* <Signout_modal /> */}
                     <svg
@@ -225,7 +241,7 @@ export default function Navbar() {
                       <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
                     </svg>
                     Log Out
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
