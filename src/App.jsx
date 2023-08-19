@@ -4,7 +4,7 @@ import IssuePage from "./pages/IssuePage";
 import LandingPage from "./pages/LandingPage";
 import "./search.css";
 import AuthPage from "./pages/AuthPage";
-import IssueDetails from "./components/IssueDetails";
+import IssueDetails from "./pages/IssueDetails";
 
 function App() {
   document.body.style.backgroundColor = "#000000";
