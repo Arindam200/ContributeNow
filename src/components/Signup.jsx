@@ -5,17 +5,26 @@ import { useNavigate } from "react-router-dom";
 export default function SignUpPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   let navigate = useNavigate();
 
   const signUp = async () => {
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      props.setIsAuth(true);
-      localStorage.setItem("user", true);
-      navigate("/list");
-    } catch (err) {
-      console.log(err);
+    if (password.length > 8) {
+      if (password === confirmPassword) {
+        try {
+          await createUserWithEmailAndPassword(auth, email, password);
+          props.setIsAuth(true);
+          localStorage.setItem("user", true);
+          navigate("/list");
+        } catch (err) {
+          console.log(err);
+        }
+      } else {
+        alert("Password does not match the confirm password");
+      }
+    } else {
+      alert("Password should have at least 8 characters");
     }
   };
 
@@ -75,7 +84,7 @@ export default function SignUpPage(props) {
               onChange={(e) => setPassword(e.target.value)}
               aria-describedby="password-error"
             />
-            <div className="hidden absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
+            {/* <div className="hidden absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
               <svg
                 className="h-5 w-5 text-red-500"
                 width="16"
@@ -86,54 +95,52 @@ export default function SignUpPage(props) {
               >
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
               </svg>
-            </div>
+            </div> */}
           </div>
-          <p className="hidden text-xs text-red-600 mt-2" id="password-error">
+          {/* <p className="hidden text-xs text-red-600 mt-2" id="password-error">
             8+ characters required
-          </p>
+          </p> */}
         </div>
         {/* <!-- End Form Group --> */}
 
         {/* <!-- Form Group --> */}
-        {/* <div>
-                      <label
-                        htmlFor="confirm-password"
-                        className="block text-sm mb-2 dark:text-white"
-                      >
-                        Confirm Password
-                      </label>
-                      <div className="relative">
-                        <input
-                          type="password"
-                          id="confirm-password"
-                          name="confirm-password"
-
-                          className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
-
-                          required
-                          aria-describedby="confirm-password-error"
-                          onChange={(e) => setConfirmPassword(e.target.value)}
-                        />
-                        <div className="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
-                          <svg
-                            className="h-5 w-5 text-red-500"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            viewBox="0 0 16 16"
-                            aria-hidden="true"
-                          >
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                          </svg>
-                        </div>
-                      </div>
-                      <p
-                        className="hidden text-xs text-red-600 mt-2"
-                        id="confirm-password-error"
-                      >
-                        Password does not match the password
-                      </p>
-                    </div> */}
+        <div>
+          <label
+            htmlFor="confirm-password"
+            className="block text-sm mb-2 dark:text-white"
+          >
+            Confirm Password
+          </label>
+          <div className="relative">
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
+              required
+              aria-describedby="confirm-password-error"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            {/* <div className="hidden absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
+              <svg
+                className="h-5 w-5 text-red-500"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+              >
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+              </svg>
+            </div> */}
+          </div>
+          {/* <p
+            className="hidden text-xs text-red-600 mt-2"
+            id="confirm-password-error"
+          >
+            Password does not match the password
+          </p> */}
+        </div>
         {/* <!-- End Form Group --> */}
 
         {/* <!-- Checkbox --> */}

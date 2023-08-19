@@ -7,7 +7,6 @@ const Card = (props) => {
   const currentTime = Date.now();
   const createdDate = new Date(props.active);
   const updatedDate = new Date(props.update);
-  console.log(props.id);
 
   const timeInMiliSecondsForCreate = currentTime - createdDate;
   const timeInMiliSecondsForUpdate = currentTime - updatedDate;

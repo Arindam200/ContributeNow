@@ -36,7 +36,7 @@ export default function LoginPage(props) {
               className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
               required
               aria-describedby="email-error"
-              onChange={() => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <div className="hidden absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
               <svg
