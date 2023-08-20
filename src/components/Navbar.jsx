@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import ApiContext from "../Context/api/apicontext";
-import { X } from "phosphor-react";
 import Signout_modal from "./Signout_modal";
 import { auth, googleProvider } from "../Config/firebase";
 import { signOut } from "firebase/auth";
@@ -157,7 +156,7 @@ export default function Navbar() {
               >
                 <img
                   className="inline-block h-[2.375rem] w-[2.375rem] rounded-full"
-                  src="https://avatars.githubusercontent.com/u/109217591?v=4"
+                  src={`https://api.dicebear.com/6.x/identicon/svg?seed=${searchData.userName}&flip=true`}
                   alt="Image Description"
                 />
               </button>
@@ -171,7 +170,7 @@ export default function Navbar() {
                     Signed in as
                   </p>
                   <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    Arindam Majumder
+                    {searchData.userName}
                   </p>
                 </div>
                 <div className="mt-2 py-2 first:pt-0 last:pb-0">
