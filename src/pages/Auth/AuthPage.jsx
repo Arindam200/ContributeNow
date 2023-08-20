@@ -1,10 +1,10 @@
-import { auth, googleProvider } from "../Config/firebase";
+import { auth, googleProvider } from "../../Config/firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Context from "../Context/api/apicontext";
-import SignUpPage from "../components/Signup";
-import LoginPage from "../components/Login";
+import Context from "../../Context/api/apicontext";
+import SignUpPage from "./components/Signup";
+import LoginPage from "./components/Login";
 
 const AuthPage = () => {
   const [isUser, setIsUser] = useState(false);

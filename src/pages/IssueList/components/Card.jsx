@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Details from "./Details";
+import Details from "../../Landing/components/Details";
 import ReactMarkdown from "react-markdown";
 import IssueDetails from "./IssueDetails";
 const Card = (props) => {

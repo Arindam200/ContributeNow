@@ -1,7 +1,7 @@
-import { auth } from "../Config/firebase";
+import { auth } from "../../../Config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState, useContext } from "react";
-import ApiContext from "../Context/api/apicontext";
+import ApiContext from "../../../Context/api/apicontext";
 import { useNavigate } from "react-router-dom";
 export default function SignUpPage(props) {
   const userName = useContext(ApiContext);

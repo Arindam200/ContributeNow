@@ -1,4 +1,4 @@
-import { auth } from "../Config/firebase";
+import { auth } from "../../../Config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
