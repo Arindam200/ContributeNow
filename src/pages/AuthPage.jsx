@@ -17,6 +17,7 @@ const AuthPage = () => {
     try {
       await signInWithPopup(auth, googleProvider);
       authDetails.setIsAuth(true);
+      authDetails.setUserName(auth.currentUser.displayName);
       localStorage.setItem("user", true);
       navigate("/list");
     } catch (err) {
