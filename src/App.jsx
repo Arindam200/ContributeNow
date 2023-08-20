@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import IssuePage from "./pages/IssuePage";
-import LandingPage from "./pages/LandingPage";
-import "./search.css";
-import AuthPage from "./pages/AuthPage";
-import IssueDetails from "./components/IssueDetails";
+import IssuePage from "./pages/IssueList/IssuePage";
+import LandingPage from "./pages/Landing/LandingPage";
+import AuthPage from "./pages/Auth/AuthPage";
+import "./assets/styles/search.css";
+import IssueDetails from "./pages/IssueList/components/IssueDetails";
 
 function App() {
   document.body.style.backgroundColor = "#000000";

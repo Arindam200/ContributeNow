@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Image from "../assets/images/brandbird.png";
+import Image from "../../../assets/images/brandbird.png";
 
 export default function Hero() {
   return (

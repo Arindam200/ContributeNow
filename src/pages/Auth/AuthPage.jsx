@@ -1,20 +1,23 @@
-import { auth, googleProvider } from "../Config/firebase";
+import { auth, googleProvider } from "../../Config/firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Context from "../Context/api/apicontext";
-import SignUpPage from "../components/Signup";
-import LoginPage from "../components/Login";
+import Context from "../../Context/api/apicontext";
+import SignUpPage from "./components/Signup";
+import LoginPage from "./components/Login";
 
 const AuthPage = () => {
   const [isUser, setIsUser] = useState(false);
   let navigate = useNavigate();
-  let a = useContext(Context);
+  let authDetails = useContext(Context);
+
+  localStorage.getItem("user") ? navigate("/list") : navigate("/auth");
 
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      a.setIsAuth(true);
+      authDetails.setIsAuth(true);
+      authDetails.setUserName(auth.currentUser.displayName);
       localStorage.setItem("user", true);
       navigate("/list");
     } catch (err) {
@@ -101,9 +104,15 @@ const AuthPage = () => {
                 Or
               </div>
               {isUser ? (
-                <LoginPage setIsAuth={a.setIsAuth} isAuth={a.isAuth} />
+                <LoginPage
+                  setIsAuth={authDetails.setIsAuth}
+                  isAuth={authDetails.isAuth}
+                />
               ) : (
-                <SignUpPage setIsAuth={a.setIsAuth} isAuth={a.isAuth} />
+                <SignUpPage
+                  setIsAuth={authDetails.setIsAuth}
+                  isAuth={authDetails.isAuth}
+                />
               )}
             </div>
           </div>

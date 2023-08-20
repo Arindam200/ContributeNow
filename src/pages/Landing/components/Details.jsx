@@ -1,4 +1,4 @@
-import useApiData from "../hooks/useApiData";
+import useApiData from "../../../hooks/useApiData";
 
 const Details = (props) => {
   const repoDetails = useApiData(props.repoLink);

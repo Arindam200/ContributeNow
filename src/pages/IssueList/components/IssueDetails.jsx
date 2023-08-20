@@ -1,5 +1,5 @@
 import React from "react";
-import Details from "./Details";
+import Details from "../../Landing/components/Details";
 import ReactMarkdown from "react-markdown";
 
 export default function IssueDetails({ props }) {

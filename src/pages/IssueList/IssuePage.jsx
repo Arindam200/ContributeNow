@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
-import ApiContext from "../Context/api/apicontext";
-import Card from "../components/Card";
-import Navbar from "../components/Navbar";
+import ApiContext from "../../Context/api/apicontext";
+import Card from "./components/Card";
+import Navbar from "../../components/Navbar";
 import LoadingBar from "react-top-loading-bar";
 import { useNavigate } from "react-router-dom";
 

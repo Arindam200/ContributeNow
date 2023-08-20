@@ -7,6 +7,7 @@ const apiState = (props) => {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
     const updateIssue = async (pageNumber) => {
@@ -35,6 +36,8 @@ const apiState = (props) => {
     loading,
     isAuth,
     setIsAuth,
+    userName,
+    setUserName,
   };
   return (
     <ApiContext.Provider value={passData}>
