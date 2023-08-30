@@ -4,62 +4,6 @@ import ReactMarkdown from "react-markdown";
 import IssueDetails from "./IssueDetails";
 const Card = (props) => {
   const labelDetails = [];
-  const currentTime = Date.now();
-  const createdDate = new Date(props.active);
-  const updatedDate = new Date(props.update);
-
-  const timeInMiliSecondsForCreate = currentTime - createdDate;
-  const timeInMiliSecondsForUpdate = currentTime - updatedDate;
-  const [timeCreate, setTimeCreate] = useState({
-    Years: 0,
-    Months: 0,
-    Days: 0,
-    Hours: 0,
-    Minutes: 0,
-    Seconds: 0,
-  });
-  const [timeUpdate, setTimeUpdate] = useState({
-    Years: 0,
-    Months: 0,
-    Days: 0,
-    Hours: 0,
-    Minutes: 0,
-    Seconds: 0,
-  });
-
-  const issueActivationTime = () => {
-    setTimeCreate({
-      Years: Math.floor(
-        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 365)
-      ),
-      Months: Math.floor(
-        timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24 * 30)
-      ),
-      Days: Math.floor(timeInMiliSecondsForCreate / (1000 * 60 * 60 * 24)),
-      Hours: Math.floor((timeInMiliSecondsForCreate / (1000 * 60 * 60)) % 24),
-      Minutes: Math.floor((timeInMiliSecondsForCreate / (1000 * 60)) % 60),
-      Seconds: Math.floor((timeInMiliSecondsForCreate / 1000) % 60),
-    });
-  };
-  const issueUpdatationTime = () => {
-    setTimeUpdate({
-      Years: Math.floor(
-        timeInMiliSecondsForUpdate / (1000 * 60 * 60 * 24 * 365)
-      ),
-      Months: Math.floor(
-        timeInMiliSecondsForUpdate / (1000 * 60 * 60 * 24 * 30)
-      ),
-      Days: Math.floor(timeInMiliSecondsForUpdate / (1000 * 60 * 60 * 24)),
-      Hours: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60 * 60)) % 24),
-      Minutes: Math.floor((timeInMiliSecondsForUpdate / (1000 * 60)) % 60),
-      Seconds: Math.floor((timeInMiliSecondsForUpdate / 1000) % 60),
-    });
-  };
-
-  useEffect(() => {
-    issueActivationTime();
-    issueUpdatationTime();
-  }, []);
 
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
@@ -94,13 +38,12 @@ const Card = (props) => {
           </div>
 
           <div className="h-10 items-start flex justify-start overflow-hidden">
-            {labelDetails.map((label) => (
+            {props.labels.slice(0, 3).map((label, index) => (
               <span
+                key={index}
                 style={{
                   color: "#" + label.color,
                   borderColor: "#" + label.color,
-
-                  // backgroundColor: "#" + label.color,
                 }}
                 className="mt-2 me-2 inline-block py-1 px-2 rounded-full border last:mr-0 mr-1"
               >
@@ -110,7 +53,7 @@ const Card = (props) => {
                     color: "#" + label.color,
                   }}
                 >
-                  {label.text}
+                  {label.name}
                 </h3>
               </span>
             ))}
@@ -127,7 +70,7 @@ const Card = (props) => {
 
           <div className="flex justify-between">
             <Details
-              className=""
+              className="mt-10"
               repoLink={props.repoLink}
               comments={props.comment}
             />
