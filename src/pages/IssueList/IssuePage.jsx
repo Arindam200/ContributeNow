@@ -37,10 +37,10 @@ const IssuePage = () => {
         onLoaderFinished={() => cardData.setProgress(0)}
       />
       <div className="lg:mx-20 mx-1">
-        <div className=" grid lg:grid-cols-3 gap-2 ">
+        <div className=" grid lg:grid-cols-3 gap-10 ">
           {!cardData.loading &&
             cardData.data.map((element) => (
-              <div className="flex flex-col  bg-gray-800 text-gray-50 rounded h-fit ">
+              <div className=" bg-gray-800 text-gray-50 rounded h-fit ">
                 <Card
                   id={element.id}
                   key={element.url}
