@@ -65,7 +65,9 @@ const IssuePage = () => {
               onClick={handlePreviousPage}
               disabled={page <= 1}
             >
-              <span aria-hidden="true">«</span>
+              <span className="cursor-pointer" aria-hidden="true">
+                «
+              </span>
               <span className="sr-only">Previous</span>
             </div>
             <div
@@ -96,7 +98,9 @@ const IssuePage = () => {
               disabled={page + 1 > Math.ceil(1000 / 15)}
             >
               <span className="sr-only">Next</span>
-              <span aria-hidden="true">»</span>
+              <span aria-hidden="true" className="cursor-pointer">
+                »
+              </span>
             </div>
           </div>
         )}

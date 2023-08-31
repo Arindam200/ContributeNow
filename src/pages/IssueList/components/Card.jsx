@@ -2,12 +2,17 @@ import { useState, useEffect } from "react";
 import Details from "../../Landing/components/Details";
 import ReactMarkdown from "react-markdown";
 import IssueDetails from "./IssueDetails";
+import SearchModal from "./SearchModal";
 const Card = (props) => {
   const labelDetails = [];
 
   props.labels.map((label) =>
     labelDetails.push({ text: label.name, color: label.color })
   );
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => {
+    setModal(!modal);
+  };
   return (
     <>
       <div class="relative text-start group">
@@ -74,15 +79,19 @@ const Card = (props) => {
               repoLink={props.repoLink}
               comments={props.comment}
             />
-            <button className="mt-2 px-4 py-1.5 rounded-lg border border-green-500  hover:bg-black  hover:bg-gradient-to-l hover:from-green-500 hover:via-green-300 hover:to-green-600 hover:text-white transition-all delay-50 text-green-500 text-sm font-medium">
+            <button
+              onClick={toggleModal}
+              className="mt-2 px-4 py-1.5 rounded-lg border border-green-500  hover:bg-black  hover:bg-gradient-to-l hover:from-green-500 hover:via-green-300 hover:to-green-600 hover:text-white transition-all delay-50 text-green-500 text-sm font-medium"
+            >
               {/* <a href={props.link} target="_blank"> */}
               Click Now
               {/* </a> */}
             </button>
-            <IssueDetails props={props} />
+            {/* <IssueDetails props={props} /> */}
           </div>
           {/* </a> */}
         </button>
+        {modal && <SearchModal onClose={toggleModal} props={props} />}
       </div>
     </>
   );
