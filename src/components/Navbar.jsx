@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import ApiContext from '../Context/api/apicontext';
-import Signout_modal from './Signout_modal';
-import { auth, googleProvider } from '../Config/firebase';
-import { signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import ApiContext from "../Context/api/apicontext";
+import Signout_modal from "./Signout_modal";
+import { auth, googleProvider } from "../Config/firebase";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const searchData = useContext(ApiContext);
   const [filterData, setFilterData] = useState([]);
-  const [wordEntered, setWordEntered] = useState('');
+  const [wordEntered, setWordEntered] = useState("");
 
   let navigate = useNavigate();
 
@@ -19,15 +19,14 @@ export default function Navbar() {
     const newFilter = searchData.data.filter((value) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
-    searchWord === '' ? setFilterData([]) : setFilterData(newFilter);
+    searchWord === "" ? setFilterData([]) : setFilterData(newFilter);
   };
 
   const logOut = async () => {
     try {
       await signOut(auth, googleProvider);
-      localStorage.removeItem('user');
-
-      navigate('/');
+      localStorage.removeItem("user");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
@@ -116,7 +115,6 @@ export default function Navbar() {
             {/* <button
               type="button"
               className="inline-flex flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] rounded-full font-medium hover:bg-white/[.2] text-white align-middle focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all text-xs"
-              onClick={() => searchData.setLanguage('Python')}
             >
               <svg
                 className="w-3.5 h-3.5"
@@ -129,11 +127,10 @@ export default function Navbar() {
                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
               </svg>
             </button> */}
-            <button
+            {/* <button
               type="button"
               className="inline-flex flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] rounded-full font-medium hover:bg-white/[.2] text-white align-middle focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all text-xs"
               data-hs-offcanvas="#hs-offcanvas-right"
-              onClick={() => searchData.setLanguage('PHP')}
             >
               <svg
                 className="w-3.5 h-3.5"
@@ -146,7 +143,7 @@ export default function Navbar() {
                 <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
                 <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
               </svg>
-            </button>
+            </button> */}
 
             <div
               className="hs-dropdown relative inline-flex"
@@ -159,9 +156,7 @@ export default function Navbar() {
               >
                 <img
                   className="inline-block h-[2.375rem] w-[2.375rem] rounded-full"
-                  src={`https://api.dicebear.com/6.x/identicon/svg?seed=${localStorage.getItem(
-                    'userName'
-                  )}&flip=true`}
+                  src={`https://api.dicebear.com/6.x/identicon/svg?seed=${searchData.userName}&flip=true`}
                   alt="Image Description"
                 />
               </button>
@@ -175,7 +170,7 @@ export default function Navbar() {
                     Signed in as
                   </p>
                   <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    {localStorage.getItem('userName')}
+                    {searchData.userName}
                   </p>
                 </div>
                 <div className="mt-2 py-2 first:pt-0 last:pb-0">
