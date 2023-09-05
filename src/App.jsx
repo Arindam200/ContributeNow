@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/list" element={<IssuePage />} />
-          <Route path="/list/:id" element={<IssueDetails />} />
+          {/* <Route path="/list/:id" element={<IssueDetails />} /> */}
           <Route exact path="/auth" element={<AuthPage />} />
         </Routes>
       </div>
