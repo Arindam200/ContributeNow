@@ -14,7 +14,8 @@ export default function SearchModal({ onClose, props }) {
           onClick={onClose}
           className="fixed inset-0 z-40 bg-gray-700 bg-opacity-50 backdrop-blur"
         ></div>
-        <div className="z-50 w-[700px] bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+
+        <div className="relative z-50 lg:w-[700px] overflow-scroll w-11/12 h-4/5 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-black dark:border-gray-700">
           <div className="p-4 sm:p-7">
             <div className="text-center">
               <h3 className="text-2xl overflow-hidden  font-bold dark:text-white text-gray-900 sm:text-xl">
