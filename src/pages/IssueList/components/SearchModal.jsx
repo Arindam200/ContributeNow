@@ -9,12 +9,12 @@ export default function SearchModal({ onClose, props }) {
   );
   return (
     <>
-      <div className="fixed pt-24 inset-0 flex items-start justify-center z-50">
+      <div className="fixed pt-16 inset-0 flex items-start justify-center z-50">
         <div
           onClick={onClose}
           className="fixed inset-0 z-40 bg-gray-700 bg-opacity-50 backdrop-blur"
         ></div>
-        <div className="z-50 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div className="z-50 w-[700px] bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div className="p-4 sm:p-7">
             <div className="text-center">
               <h3 className="text-2xl overflow-hidden  font-bold dark:text-white text-gray-900 sm:text-xl">
