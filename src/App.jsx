@@ -4,7 +4,7 @@ import IssuePage from "./pages/IssueList/IssuePage";
 import LandingPage from "./pages/Landing/LandingPage";
 import AuthPage from "./pages/Auth/AuthPage";
 import "./assets/styles/search.css";
-import IssueDetails from "./pages/IssueList/components/IssueDetails";
+// import IssueDetails from "./pages/IssueList/components/IssueDetails";
 
 function App() {
   document.body.style.backgroundColor = "#000000";
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/list" element={<IssuePage />} />
-          <Route path="/list/:id" element={<IssueDetails />} />
+          {/* <Route path="/list/:id" element={<IssueDetails />} /> */}
           <Route exact path="/auth" element={<AuthPage />} />
         </Routes>
       </div>

@@ -36,7 +36,7 @@ const IssuePage = () => {
         progress={cardData.progress}
         onLoaderFinished={() => cardData.setProgress(0)}
       />
-      <div className="lg:mx-20 mx-1">
+      <div className="lg:mx-20 mx-5">
         <div className=" grid lg:grid-cols-3 gap-10 ">
           {!cardData.loading &&
             cardData.data.map((element) => (

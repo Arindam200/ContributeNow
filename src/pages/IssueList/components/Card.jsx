@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
-import Details from '../../Landing/components/Details';
-import ReactMarkdown from 'react-markdown';
-import IssueDetails from './IssueDetails';
-import SearchModal from './SearchModal';
+
+import { useState, useEffect } from "react";
+import Details from "../../Landing/components/Details";
+import ReactMarkdown from "react-markdown";
+// import IssueDetails from "./IssueDetails";
+import SearchModal from "./SearchModal";
+
 const Card = (props) => {
   const labelDetails = [];
 
