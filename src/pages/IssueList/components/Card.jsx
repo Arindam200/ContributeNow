@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import Details from "../../Landing/components/Details";
-import ReactMarkdown from "react-markdown";
-import IssueDetails from "./IssueDetails";
-import SearchModal from "./SearchModal";
+import { useState, useEffect } from 'react';
+import Details from '../../Landing/components/Details';
+import ReactMarkdown from 'react-markdown';
+import IssueDetails from './IssueDetails';
+import SearchModal from './SearchModal';
 const Card = (props) => {
   const labelDetails = [];
 
@@ -15,17 +15,17 @@ const Card = (props) => {
   };
   return (
     <>
-      <div class="relative text-start group">
-        <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-        <button class="relative p-4 bg-black rounded-lg leading-none w-full">
+      <div className="relative text-start group">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+        <button className="relative p-4 bg-black rounded-lg leading-none w-full">
           {/* <a className="relative lg:h-[300px] block overflow-hidden rounded-lg border hover:bg-gray-900 border-gray-500 p-4 sm:p-6 lg:p-8"> */}
-          <div class="absolute -z-10 inset-0 h-full w-full scale-[0.80] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
+          <div className="absolute -z-10 inset-0 h-full w-full scale-[0.80] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
           {/* <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span> */}
 
           <div className="sm:flex sm:justify-between sm:gap-4">
             <div>
               <h3 className="text-lg text-start overflow-hidden lg:h-[60px] font-bold dark:text-white text-gray-900 sm:text-xl">
-                {props.title ? props.title.slice(0, 70) : "No title given"}
+                {props.title ? props.title.slice(0, 70) : 'No title given'}
               </h3>
 
               <p className="mt-1 text-start text-sm font-medium text-gray-600">
@@ -47,15 +47,15 @@ const Card = (props) => {
               <span
                 key={index}
                 style={{
-                  color: "#" + label.color,
-                  borderColor: "#" + label.color,
+                  color: '#' + label.color,
+                  borderColor: '#' + label.color,
                 }}
                 className="mt-2 me-2 inline-block py-1 px-2 rounded-full border last:mr-0 mr-1"
               >
                 <h3
                   className="text-xs font-semibold"
                   style={{
-                    color: "#" + label.color,
+                    color: '#' + label.color,
                   }}
                 >
                   {label.name}
@@ -69,7 +69,7 @@ const Card = (props) => {
             <ReactMarkdown className="max-w-[40ch] text-sm text-gray-500">
               {props.body
                 ? props.body.slice(0, 100)
-                : "No description given , To check the issue click on the link below"}
+                : 'No description given , To check the issue click on the link below'}
             </ReactMarkdown>
           </div>
 

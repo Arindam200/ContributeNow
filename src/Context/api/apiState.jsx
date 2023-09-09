@@ -29,6 +29,7 @@ const apiState = (props) => {
 
     updateIssue(pageNumber);
   }, [pageNumber, language]);
+  userName && localStorage.setItem('userName', userName);
 
   const passData = {
     data,
