@@ -20,6 +20,7 @@ function App() {
 
   return (
     <>
+
       <div className="dark:bg-black dark:text-white">
         <Routes>
           <Route exact path="/" element={<LandingPage />} />

@@ -11,7 +11,9 @@
     "start": "vite"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.1.10",
     "firebase": "^10.1.0",
+    "framer-motion": "^10.16.4",
     "kutty": "^0.6.0",
     "phosphor-react": "^1.4.1",
     "preline": "^1.9.0",

@@ -67,7 +67,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden mx-auto sm:block">
-            <label for="icon" className="sr-only">
+            <label htmlFor="icon" className="sr-only">
               Search
             </label>
             <div className="relative">

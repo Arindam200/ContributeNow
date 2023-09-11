@@ -4,7 +4,7 @@ import Card from "./components/Card";
 import Navbar from "../../components/Navbar";
 import LoadingBar from "react-top-loading-bar";
 import { useNavigate } from "react-router-dom";
-
+import FilterOp from "./components/FilterOptions";
 const IssuePage = () => {
   const cardData = useContext(ApiContext);
   let page = cardData.pageNumber;
@@ -31,6 +31,7 @@ const IssuePage = () => {
   return (
     <>
       <Navbar />
+      <FilterOp />
       <LoadingBar
         color="#f11946"
         progress={cardData.progress}
