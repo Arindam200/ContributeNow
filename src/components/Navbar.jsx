@@ -26,6 +26,7 @@ export default function Navbar() {
     try {
       await signOut(auth, googleProvider);
       localStorage.removeItem('user');
+      localStorage.removeItem('userName');
       navigate('/');
     } catch (err) {
       console.log(err);
@@ -67,7 +68,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden mx-auto sm:block">
-            <label for="icon" className="sr-only">
+            <label htmlFor="icon" className="sr-only">
               Search
             </label>
             <div className="relative">
@@ -157,7 +158,9 @@ export default function Navbar() {
               >
                 <img
                   className="inline-block h-[2.375rem] w-[2.375rem] rounded-full"
-                  src={`https://api.dicebear.com/6.x/identicon/svg?seed=${searchData.userName}&flip=true`}
+                  src={`https://api.dicebear.com/6.x/identicon/svg?seed=${localStorage.getItem(
+                    'userName'
+                  )}&flip=true`}
                   alt="Image Description"
                 />
               </button>
@@ -171,7 +174,7 @@ export default function Navbar() {
                     Signed in as
                   </p>
                   <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    {searchData.userName}
+                    {localStorage.getItem('userName')}
                   </p>
                 </div>
                 <div className="mt-2 py-2 first:pt-0 last:pb-0">

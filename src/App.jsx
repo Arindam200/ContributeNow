@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import IssuePage from "./pages/IssueList/IssuePage";
-import LandingPage from "./pages/Landing/LandingPage";
-import AuthPage from "./pages/Auth/AuthPage";
-import "./assets/styles/search.css";
+import React, { useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import IssuePage from './pages/IssueList/IssuePage'
+import LandingPage from './pages/Landing/LandingPage'
+import AuthPage from './pages/Auth/AuthPage'
+import './styles/search.css'
 // import IssueDetails from "./pages/IssueList/components/IssueDetails";
 
 function App() {
-  document.body.style.backgroundColor = "#000000";
-  const theme = "dark";
+  document.body.style.backgroundColor = '#000000'
+  const theme = 'dark'
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark')
     }
-  }, [theme]);
+  }, [theme])
 
   return (
     <>
@@ -29,7 +29,7 @@ function App() {
         </Routes>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
