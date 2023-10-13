@@ -1,15 +1,15 @@
-import { useContext, useEffect } from "react";
-import ApiContext from "../../Context/api/apicontext";
-import Card from "./components/Card";
-import Navbar from "../../components/Navbar";
-import LoadingBar from "react-top-loading-bar";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from 'react';
+import { ApiContext } from '../../Context/api/apiContext';
+import Card from './components/Card';
+import Navbar from '../../components/Navbar';
+import LoadingBar from 'react-top-loading-bar';
+import { useNavigate } from 'react-router-dom';
 
 const IssuePage = () => {
   const cardData = useContext(ApiContext);
   let page = cardData.pageNumber;
   let navigate = useNavigate();
-  let data = localStorage.getItem("user");
+  let data = localStorage.getItem('user');
 
   const handleNextPage = () => {
     page += 1;
@@ -22,9 +22,9 @@ const IssuePage = () => {
 
   useEffect(() => {
     if (data) {
-      navigate("/list");
+      navigate('/list');
     } else if (!cardData.isAuth) {
-      navigate("/auth");
+      navigate('/auth');
     }
   }, []);
 

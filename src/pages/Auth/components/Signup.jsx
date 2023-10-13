@@ -1,13 +1,13 @@
-import { auth } from "../../../Config/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState, useContext } from "react";
-import ApiContext from "../../../Context/api/apicontext";
-import { useNavigate } from "react-router-dom";
+import { auth } from '../../../Config/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useState, useContext } from 'react';
+import { ApiContext } from '../../../Context/api/apiContext';
+import { useNavigate } from 'react-router-dom';
 export default function SignUpPage(props) {
   const userName = useContext(ApiContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   let navigate = useNavigate();
 
@@ -17,16 +17,16 @@ export default function SignUpPage(props) {
         try {
           await createUserWithEmailAndPassword(auth, email, password);
           props.setIsAuth(true);
-          localStorage.setItem("user", true);
-          navigate("/list");
+          localStorage.setItem('user', true);
+          navigate('/list');
         } catch (err) {
-          alert("Email is already in use");
+          alert('Email is already in use');
         }
       } else {
-        alert("Password does not match the confirm password");
+        alert('Password does not match the confirm password');
       }
     } else {
-      alert("Password should have at least 8 characters");
+      alert('Password should have at least 8 characters');
     }
   };
 

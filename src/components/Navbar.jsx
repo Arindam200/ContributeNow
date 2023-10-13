@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import ApiContext from '../Context/api/apicontext';
+import { ApiContext } from '../Context/api/apiContext';
 import Signout_modal from './Signout_modal';
 import { auth, googleProvider } from '../Config/firebase';
 import { signOut } from 'firebase/auth';
