@@ -1,5 +1,6 @@
-import ApiContext from './apicontext';
-import { useState, useEffect } from 'react';
+import { useState, useEffect,createContext } from 'react';
+
+export const ApiContext = createContext();
 
 const apiState = (props) => {
   const [data, setData] = useState([]);

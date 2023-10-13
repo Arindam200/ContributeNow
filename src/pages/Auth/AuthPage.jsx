@@ -1,25 +1,25 @@
-import { auth, googleProvider } from "../../Config/firebase";
-import { signInWithPopup } from "firebase/auth";
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import Context from "../../Context/api/apicontext";
-import SignUpPage from "./components/Signup";
-import LoginPage from "./components/Login";
+import { auth, googleProvider } from '../../Config/firebase';
+import { signInWithPopup } from 'firebase/auth';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ApiContext } from '../../Context/api/apiContext';
+import SignUpPage from './components/Signup';
+import LoginPage from './components/Login';
 
 const AuthPage = () => {
   const [isUser, setIsUser] = useState(false);
   let navigate = useNavigate();
-  let authDetails = useContext(Context);
+  let authDetails = useContext(ApiContext);
 
-  localStorage.getItem("user") ? navigate("/list") : navigate("/auth");
+  localStorage.getItem('user') ? navigate('/list') : navigate('/auth');
 
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
       authDetails.setIsAuth(true);
       authDetails.setUserName(auth.currentUser.displayName);
-      localStorage.setItem("user", true);
-      navigate("/list");
+      localStorage.setItem('user', true);
+      navigate('/list');
     } catch (err) {
       console.log(err);
     }
